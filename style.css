@@ -1,0 +1,133 @@
+@import url('https://fonts.cdnfonts.com/css/photograph-signature');
+@import url('https://fonts.cdnfonts.com/css/kozuka-gothic-pro');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: auto;
+}
+.gothic{
+    font-family: 'Kozuka Gothic Pro', sans-serif;
+}
+.pro{
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.mincho{
+    font-family: kozuka-mincho-pr6n, serif;
+}
+.poppins{
+    font-family: 'Poppins', sans-serif;
+}
+.photograph{
+    font-family: 'Photograph Signature', sans-serif;
+}
+.black{
+    color: #171717;
+}
+.white{
+    color: #FFFFFF;
+}
+.gold{
+    color: #ECD597;
+}
+.gold1{
+    color: #BE9E47;
+}
+.gold2{
+    color: #B39B77;
+}
+#dubaiBling, span{
+    font-weight: 400;
+    font-size: 218.19px;
+}
+nav{
+    background-color: #756C53;
+}
+button{
+    background-color: #ECD597;
+    color: #171717;
+    border-radius: 7px;
+    font-weight: 500;
+    font-size: 18px;
+}
+#unwind, #fivePalm{
+    font-weight: 400;
+    font-size: 100px;
+}
+.directionDiv{
+    background-color: white;
+}
+.fivePalmDiv{
+    background-color: #BE9E47;
+}
+.center{
+    text-align: center;
+}
+h1{
+    font-style: normal;
+    font-weight: 200;
+    color: white;
+}
+.heroSection{
+    background-image: url("./pictures/Dubai\ city\ landscape\ heroSection.png");
+    height: 1200px;
+}
+#directoryPage{
+    background-image: url("./pictures/Directory\ heroSection.png");
+}
+.directoryDiv{
+    background-color:#FFF8E6;
+}
+#travelGuide{
+    text-decoration: underline;
+}
+#eventsPage{
+    background-image: url("./pictures/events.png");
+}
+#accommodationPage{
+    background-image: url("./pictures/Component\ 11.png");
+}
+.logoAndMenuDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: top;
+}
+
+.celebrantSpeech{
+ display: flex;
+}
+.gallery, .accommodationSection, .travelSection{
+    background-color: black;
+}
+
+.map{
+    display: flex;
+    flex-direction: row;
+}
+.countryDirection{
+    color: white;
+    background-color: #535353;
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.listItem{
+    padding-left: 20px;
+}
+
+
+width: Hug (164px)px;
+height: Hug (64px)px;
+top: 998px;
+left: 782px;
+gap: 0px;
+opacity: 0px;
