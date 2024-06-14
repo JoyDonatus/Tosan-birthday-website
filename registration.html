@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
     <link rel="stylesheet" href="./reg.css">
-    <script src="./reg.js"></script>
+    <script src="./reg.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@20.2.0/build/css/intlTelInput.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script>
+    <!-- <script>
         function receiveMessage(event){
-            console.log(event.data);
+           console.log(event.data);
             function myFunction(x) {
                     if (x.matches){ // If media query matches
                         $('#containerDiv1').css({'flex-direction': 'column-reverse'});
@@ -30,18 +30,18 @@
                     }else {
                         $('#containerDiv1').css({'flex-direction': 'row'});
                     }
-                }
-            var x = window.matchMedia("(max-width: 1000px)");
-            if(event.data === 'Hide'){
-                myFunction(x);
-                x.addEventListener("change", function() {
+                 }
+             var x = window.matchMedia("(max-width: 1000px)");
+             if(event.data === 'Hide'){
+                 myFunction(x);
+                 x.addEventListener("change", function() {
                 myFunction(x);
                 });
-            }
+             }
         }
-        window.addEventListener('message', receiveMessage, false);
-        console.log('listener added');
-    </script>       
+         window.addEventListener('message', receiveMessage, false);
+         console.log('listener added');
+    </script>   -->     
 </head>
 <body class="fullBody">
     <section class="firstSection">
@@ -53,8 +53,10 @@
     <section class="secondSection" style="width: 100%; display: flex;">
         <div class="containerDiv" id="containerDiv1">
             <form class="form3" id="form3">
-                <input type="checkbox" id="demoCheckbox" name="checkbox" value="1" onclick="myFunction()">
+                <div class="checkBoxClass">
+                    <input type="checkbox" id="demoCheckbox" name="checkbox" value="1" onclick="myFunction()">
                     <label for="demoCheckbox">RSVP For Two</label>
+                </div>
                 <div id="registrationDiv1" class="registrationDiv" style="display: block;">
                     <div class="inputDiv">
                         <input class="inputInfo" type="text" name="First Name" autocomplete="given-name" id="firstName3" required="" value="" placeholder="Enter your name">
@@ -102,12 +104,12 @@
                         </div>
                     </div>
                     <hr>
-                    <div id="dateDiv">
-                        <div id="start"><input type="text" name="trip-start"
+                    <div class="inputDiv" id="dateDiv">
+                        <div id="start"><input class="inputInfo" type="text" name="trip-start"
                             value="" placeholder="Arrival (DD/MM/YYY)">
                         </div>
                         <div id="end" >
-                            <input type="text" name="trip-end"
+                            <input class="inputInfo" type="text" name="trip-end"
                             value="" placeholder="Departure (DD/MM/YYY)">
                         </div>
                     </div>
@@ -202,12 +204,11 @@
         </div>
     </section>  
     <section class="main-scroll-div">
-        <div class="scrollButton">
-                <img src="./pictures/Component 1.png" id="scrollButton" alt="left scroll">  
-        </div>
-            
         <div class="cover">
-            <div class="scroll-images">
+            <div class="scrollButton" id="prev-slide">
+                <img src="./pictures/Component 1.png" id="scrollButton" class="slideButtons" alt="left scroll">  
+            </div>
+            <div class="scrollImages">
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front" style="background-image: url('./pictures/dubai-1\ 1\ \(1\).png');">
@@ -419,11 +420,10 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="scrollButton1">
-                <img src="./pictures/Component 7.png" id="scrollButton1" alt="right scroll">
-        </div>
+            <div class="scrollButton1" id="next-slide">
+                <img src="./pictures/Component 7.png" class="slideButtons" id="scrollButton1" alt="right scroll">
+            </div>
+        </div>     
     </section>  
     <footer>
         <div>
@@ -477,37 +477,6 @@
         });
     </script>
     <script>
-        let scrollButton1 = document.getElementById("scrollButton1");
-        let scrollButton = document.getElementById("scrollButton");
-        let checkbox = document.getElementById("demoCheckbox");
-        //var checkbox = document.querySelector("input[name=checkbox]");
-        scrollButton1.addEventListener('click', function(){
-            console.log('yes!');
-            var left = document.querySelector(".scroll-images");
-            left.scrollBy(350, 0)
-        })
-        scrollButton.addEventListener('click', function(){
-            console.log('yeske!');
-            var right = document.querySelector(".scroll-images");
-            right.scrollBy(-350, 0)
-        })
-        checkbox.style.borderColor = '#ECD597';
-        checkbox.addEventListener('change', function() {
-            console.log('true!');
-            if(this.checked) {
-            checkbox.style.backgroundColor = '#ECD597';
-            } else {
-                checkbox.style.backgroundColor = "#FFFFFF00";
-            }
-        });
-        function scrolll(){
-            var left = document.querySelector(".scroll-images");
-            left.scrollBy(350, 0);
-        }
-        function scrollr(){
-            var right = document.querySelector(".scroll-images");
-            right.scrollBy(-350, 0);
-        }
         let day1 = document.getElementById('day1');
         let day2 = document.getElementById('day2');
         let day3Event1 = document.getElementById('day3Event1');
@@ -582,7 +551,9 @@
             }
             else{
                 tshirtSize.style.display = "none";
+                tshirtSize.selectedIndex = 0;
                 tshirtSizeP.style.display = "none";
+                tshirtSizeP.selectedIndex = 0;
             }   
         })
         eventDiv3Cancel.addEventListener('click', function(){
@@ -595,6 +566,8 @@
             else{
                 tshirtSize.style.display = "none";
                 tshirtSizeP.style.display = "none";
+                tshirtSizeP.selectedIndex = 0;
+                tshirtSize.selectedIndex = 0;
             }
         })
         eventDiv4Cancel.addEventListener('click', function(){
@@ -649,7 +622,7 @@
             }
           })
             .then(function (data) {
-                window.open();
+                window.open("https://effective-food-275152.framer.app/Confirmation", "_top");
                 form3.reset();
             }).catch(function (error) {
                 console.error(error);

@@ -133,12 +133,12 @@ button{
 .cover{
     position: relative;
 }
-.scroll-images{
+.scrollImages{
     position: relative;
     width: 100%;
     display: flex;
     align-items: center;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .flip-card{
@@ -188,7 +188,7 @@ button{
 .hiddenEvents{
     border: 1px solid #171717;
     border-radius: 20px;
-    min-height: 100px;
+    min-height: max-content;
     width: 474px;
 }
 .eventName{
@@ -200,9 +200,11 @@ button{
     color: #171717;
 
 }
-#registrationDiv1 > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti__flag-container > div.iti__selected-flag > div.iti__flag.iti__globe{
+#registrationDiv1 > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti__flag-container > div.iti__selected-flag > div.iti__flag.iti__globe,
+#partnerDetails > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti__flag-container > div.iti__selected-flag > div.iti__flag.iti__globe{
     display: none !important;
 }
+#registrationDiv1 > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown,
 #registrationDiv1 > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown{ 
     width: 477px !important;
 }
@@ -210,27 +212,47 @@ button{
     border-color: #ECD597 !important;
     background-color: #ECD597 !important; 
 }
+.checkBoxClass{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
-input, select{
+.inputInfo, select{
     border-width: 1px;
     height: 60px;
     border-radius: 10px;
     width: 100%;
+    margin-bottom: 10px;
+
 }
+.inputDiv{
+    margin-bottom: 10px;
+}
+
 #tshirtSize > option:nth-child(1){
     color: #393939;
 }
 .containerDiv{
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-    gap: 100px;
+    align-items: top;
+    justify-content: space-between;
+    gap: 40px;
 }
 form{
     width: 477px;
+    display: flex;
+    flex-direction: column;
 }
 #start, #end{
     width: 50%;
+    margin-top: 10px;
+}
+#partnerDetails{
+    margin: 10px;
+}
+#partnerDetails > h2{
+    font-family: 'Kozuka Gothic Pro', sans-serif;
+    margin-bottom: 5px;
 }
 #dateDiv{
     display: flex;
@@ -240,20 +262,25 @@ form{
 hr{
     color: #ECD597;
     opacity: 0.7;
+    margin: 15px
 }
-.scrollButton1{
+.cover .scrollButton1{
     cursor: pointer;
     background-color: #ffffff00;
     position: absolute;
     z-index: 10;
     left: 9px;
+    top: 50%;
+    transform: translateY(-50%);
 }
-.scrollButton{
+.cover .scrollButton{
     cursor: pointer;
     background-color: #ffffff00;
     position: absolute;
     z-index: 10;
-    right: 0px;
+    right: 900px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 footer{
