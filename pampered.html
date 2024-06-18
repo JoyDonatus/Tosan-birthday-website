@@ -4,49 +4,406 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
-    <link rel="stylesheet" href="./reg.css">
-    <script src="./reg.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@20.2.0/build/css/intlTelInput.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      crossorigin="anonymous"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <!-- <script>
-        function receiveMessage(event){
-           console.log(event.data);
-            function myFunction(x) {
-                    if (x.matches){ // If media query matches
-                        $('#containerDiv1').css({'flex-direction': 'column-reverse'});
-                        $('.secondSection').css({'margin-left': '0'});
-                        $('.secondSection').css({'margin-right': '0'});
-                        $('.secondSection').css({'padding-right': '0'});
-                        $('.secondSection').css({'padding-left': '0'});
-                        $('.navDiv').css({'margin-left': '0'});
-                        $('.navDiv').css({'margin-right': '0'});
-                        $('.navDiv').css({'padding-right': '0'});
-                        $('.navDiv').css({'padding-left': '0'});
-                        $('#phone').css({'margin-left': '5px'});
-                        $('#registrationDiv1').css({'width': '80%'});
-                        $('#registrationDiv1').css({'margin-left': '20px'});
-                        $('#orderReviewDiv1').css({'height': '70%'});
-                        $('#country1').css({'width': '45px'});
-                    }else {
-                        $('#containerDiv1').css({'flex-direction': 'row'});
-                    }
-                 }
-             var x = window.matchMedia("(max-width: 1000px)");
-             if(event.data === 'Hide'){
-                 myFunction(x);
-                 x.addEventListener("change", function() {
-                myFunction(x);
-                });
-             }
-        }
-         window.addEventListener('message', receiveMessage, false);
-         console.log('listener added');
-    </script>   -->     
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/photograph-signature');
+@import url('https://fonts.cdnfonts.com/css/kozuka-gothic-pro');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+  margin: 0;
+   padding: 0;
+ }
+
+.hidden{
+    display: none;
+}
+.visible{
+    display: block;
+}
+.gold{
+    background-color: #BE9E47;
+}
+.goldtext{
+  color: #BE9E47;
+}
+.flip-card-back{
+    transform: rotateY(180deg);
+}
+input[type="checkbox"] {
+  display: none;
+}
+label {
+  cursor: pointer;
+}
+input[type="checkbox"] + label:before {
+  border: 1px solid #7f83a2;
+  content: "\00a0";
+  display: inline-block;
+  font: 16px/1em sans-serif;
+  height: 16px;
+  margin: 0 .25em 0 0;
+  padding: 0;
+  vertical-align: top;
+  width: 16px;
+  color: #fff;
+  border-color: #ECD597;
+  border-radius: 5px;
+}
+input[type="checkbox"]:checked + label:before {
+  background: #ECD597;
+  content: "\2713";
+}
+input[type="checkbox"]:checked + label:after {
+  font-weight: bold;
+}
+.inputInfo, select{
+    border-color: #ECD597;
+    padding-left: 10px;
+}hI 
+input:focus, select:focus { 
+    outline: none !important;
+    border-color: #ECD597;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+input::placeholder{
+   text-align: center;
+}
+ input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+select>options:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+.firstSection{
+  padding: 20px 0 0 30px;
+}
+#firstH2{
+  margin-bottom: 5px;
+}
+
+.eventDetails{
+    display: flex;
+    width: 286px;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    height: 24px;
+    padding: 0;
+    margin-bottom: 5px;
+}
+#location, #location3{
+    height: 48px;
+}
+#location1, #location2, #location4{
+    height: 24px;
+}
+.eventDetails > img{
+    margin-right: 10px;
+}
+.eventsh2{
+  font-family: 'Kozuka Gothic Pro', sans-serif;
+  text-align: left;
+  width: 100%;
+  padding-left: 70px;
+}
+.flip-card-front > h2{
+    height: 62px;
+    width: 326px;
+    font-family: 'Kozuka Gothic Pro', sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 42px;
+    text-align: center;
+    margin: 0;
+}
+
+.flip-card-front > p{
+    width: 261px;
+    height: 53px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 53px;
+    text-align: center;
+
+}
+.flip-card-back > h2{
+    font-weight: 700;
+    font-family: 'Kozuka Gothic Pro', sans-serif;
+    font-size: 24px;
+    line-height: 32px;
+    height: 58px;
+    width: 286px;
+    margin-top: 0;
+}
+button{
+    background-color: #ECD597;
+    color: #171717;
+    border-radius: 20px;
+    width: 286px;
+    height: 64px;
+    padding: 20px 40px 20px 40px;
+    gap: 20px;
+    opacity: 0px;
+    border: 0px;
+    font-family: 'Kozuka Gothic Pro', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+}
+.chosenEvents{
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 69px;
+    background-color: #FFFAED;
+    margin: 5px;
+    padding: 0 10px 0 5px;
+    text-align: left;
+}
+.chosenEventsDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+    text-align: left;
+    padding: 10px 0 0 5px;
+}
+.eventName{
+  font-family: 'Kozuka Gothic Pro', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 52px;
+  text-align: left;
+  color: #171717;
+}
+.eventcancel{
+    cursor: pointer;
+}
+.h5{
+    font-family: 'Kozuka Gothic Pro', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    align-self: baseline;
+    text-align: left;
+    color: #393939;
+}
+.h3{
+    font-family: 'Kozuka Gothic Pro', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    color: #BE9E47;
+    margin: 10px;
+}
+.hiddenEvents{
+    border: 1px solid #ECD597;
+    border-radius: 20px;
+    overflow: hidden;
+    height: fit-content;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+}
+
+#registrationDiv1 > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti__flag-container > div.iti__selected-flag > div.iti__flag.iti__globe,
+#partnerDetails > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti__flag-container > div.iti__selected-flag > div.iti__flag.iti__globe{
+    display: none !important;
+}
+#phone,
+#phone1{ 
+    width: 460px !important;
+}
+.checkBoxClass{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.inputInfo, select{
+    border: 1px solid #ECD597;
+    height: 60px;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+
+}
+.inputDiv, .telPhoneInputDiv{
+    margin-bottom: 10px;
+}
+
+#tshirtSize > option:nth-child(1){
+    color: #393939;
+}
+.containerDiv{
+    display: flex;
+    width: 100%;
+    align-items: top;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 40px;
+    
+}
+form{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+}
+#start, #end{
+    width: 50%;
+    margin-top: 10px;
+}
+
+#partnerDetails > h2{
+    font-family: 'Kozuka Gothic Pro', sans-serif;
+    margin-bottom: 5px;
+}
+#dateDiv{
+    display: flex;
+    width: 460px;
+    gap: 10px;
+}
+hr{
+    color: #ECD597;
+    opacity: 0.7;
+    margin: 15px
+}
+
+footer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+a{
+    color: #171717;
+}
+.cover{
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: 100%;
+}
+.cover .scrollImages{
+    position: relative;
+    display: flex;
+    transition: 0.5s;
+    border-radius: 10px;
+    margin-left: 30px;  
+    width: max-content;
+}
+
+.cover .arrow button{
+  font-size: 20px;
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  cursor: pointer;
+}
+.cover .arrow{
+  width: 1200px;
+  position: absolute;
+  justify-content: space-between;
+  display: flex;
+  top: 40%;
+  margin-left: 15px;
+}
+
+.main-scroll-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff00;
+  width: max-content;
+}
+
+.flip-card{
+  perspective: 1000px;
+  height: 316px;
+  overflow: hidden;
+  border-radius: 25px;
+  margin-right: 10px;
+  width: 400px;
+  background-color: #ffffff00;
+  padding-right: 50px;
+}
+
+.flip-card-front{
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.flip-card-inner {
+  background-color: #ffffff00;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+.flip-card-front{
+  background-color: transparent;
+}
+.flip-card-front, .flip-card-back{
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+select #firstOption{
+    opacity: 0.4;
+}
+    </style>
 </head>
 <body class="fullBody">
     <section class="firstSection">
         <div>
-            <h2>Event Registration</h2>
+            <h2 id="firstH2" class="goldtext">Event Registration</h2>
             <p>RSVP for Each Event to Reserve Your Spot</p>
         </div>
     </section>
@@ -80,7 +437,7 @@
                         <div class="alert alert-info" style="display: none;"></div>
                     </div>
                     <div id="partnerDetails" style="display: none;">
-                        <h2>Partner's Details</h2>
+                        <h2 class="goldtext">Partner's Details</h2>
                         <div class="inputDiv">
                             <input class="inputInfo" type="text" name="Partner First Name" autocomplete="given-name" id="firstName3" required="" value="" placeholder="Enter your partner's name">
                         </div>
@@ -113,7 +470,7 @@
                             value="" placeholder="Departure (DD/MM/YYY)">
                         </div>
                     </div>
-                        <input style="width: 477px; height: 64px; font-family: 'Kozuka Gothic Pro', sans-serif; border: none; border-radius: 20px; font-weight: 500; font-size: 18px; background-color: #ECD597; color: #171717; margin-top: 20px;" class="buttonLink" id="sub" type="submit" value="RSVP">
+                        <input style="width: 477px; height: 64px; font-family: 'Kozuka Gothic Pro', sans-serif; border: none; border-radius: 20px; font-weight: 500; font-size: 18px; background-color: #ECD597; color: #171717; margin-top: 20px; cursor: pointer;" class="buttonLink" id="sub" type="submit" value="RSVP">
                     
                     <!--<a class="buttonLink" id="sub" href="" ><button id="buttonLink" style="width: 239px; height: 57px; border: none; background-color: #222222; color: white; margin-top: 20px;" type="">Save and Continue</button></a>-->
                 </div>
@@ -152,7 +509,7 @@
                         <p class="eventName">Welcome To Dubai</p>
                     </div>
                     <div>
-                        <img class="eventcancel" id="eventDiv1Cancel" src="./pictures/X.png" alt="">
+                        <img class="eventcancel" id="eventDiv1Cancel" src="https://lh3.googleusercontent.com/pw/AP1GczPDhNpXYZo_1AnjBG1h9DYcuHArr38Z_bMmzLT_xZ5Zq3WwImoucSSHaNYA1T8DfcStIS499FEynfriG3OTvaulW5_N0uxnbxdyadCikxQ5GfN3b7l_bufWUl8KP3HHm-hX8xRWjtMuPrOYM9Bu3LR7=w32-h32-s-no-gm?authuser=0" alt="">
                     </div>  
                 </div>
                 <div id="eventDiv2" style="display: none;" class="chosenEvents">
@@ -161,7 +518,7 @@
                         <p class="eventName">Dubai Red Dune Desert Safari</p>
                     </div>
                     <div>
-                        <img class="eventcancel" id="eventDiv2Cancel" src="./pictures/X.png" alt="">
+                        <img class="eventcancel" id="eventDiv2Cancel" src="https://lh3.googleusercontent.com/pw/AP1GczPDhNpXYZo_1AnjBG1h9DYcuHArr38Z_bMmzLT_xZ5Zq3WwImoucSSHaNYA1T8DfcStIS499FEynfriG3OTvaulW5_N0uxnbxdyadCikxQ5GfN3b7l_bufWUl8KP3HHm-hX8xRWjtMuPrOYM9Bu3LR7=w32-h32-s-no-gm?authuser=0" alt="">
                     </div> 
                 </div>
                 <div id="eventDiv3" style="display: none;" class="chosenEvents">
@@ -170,7 +527,7 @@
                         <p class="eventName">Ladies let’s Get Pampered</p>
                     </div> 
                     <div>
-                        <img class="eventcancel" id="eventDiv3Cancel" src="./pictures/X.png" alt="">
+                        <img class="eventcancel" id="eventDiv3Cancel" src="https://lh3.googleusercontent.com/pw/AP1GczPDhNpXYZo_1AnjBG1h9DYcuHArr38Z_bMmzLT_xZ5Zq3WwImoucSSHaNYA1T8DfcStIS499FEynfriG3OTvaulW5_N0uxnbxdyadCikxQ5GfN3b7l_bufWUl8KP3HHm-hX8xRWjtMuPrOYM9Bu3LR7=w32-h32-s-no-gm?authuser=0" alt="">
                     </div> 
                 </div>
                 <div id="eventDiv4" style="display: none;" class="chosenEvents">
@@ -179,7 +536,7 @@
                         <p class="eventName">Tosan's Valentine Birthday Ball</p>
                     </div>
                     <div>
-                        <img class="eventcancel" id="eventDiv4Cancel" src="./pictures/X.png" alt="">
+                        <img class="eventcancel" id="eventDiv4Cancel" src="https://lh3.googleusercontent.com/pw/AP1GczPDhNpXYZo_1AnjBG1h9DYcuHArr38Z_bMmzLT_xZ5Zq3WwImoucSSHaNYA1T8DfcStIS499FEynfriG3OTvaulW5_N0uxnbxdyadCikxQ5GfN3b7l_bufWUl8KP3HHm-hX8xRWjtMuPrOYM9Bu3LR7=w32-h32-s-no-gm?authuser=0" alt="">
                     </div> 
                 </div>
                 <div id="eventDiv5" style="display: none;" class="chosenEvents">
@@ -188,7 +545,7 @@
                         <p class="eventName">Nautical Extravaganza</p>
                     </div>
                     <div>
-                        <img class="eventcancel" id="eventDiv5Cancel" src="./pictures/X.png" alt="">
+                        <img class="eventcancel" id="eventDiv5Cancel" src="https://lh3.googleusercontent.com/pw/AP1GczPDhNpXYZo_1AnjBG1h9DYcuHArr38Z_bMmzLT_xZ5Zq3WwImoucSSHaNYA1T8DfcStIS499FEynfriG3OTvaulW5_N0uxnbxdyadCikxQ5GfN3b7l_bufWUl8KP3HHm-hX8xRWjtMuPrOYM9Bu3LR7=w32-h32-s-no-gm?authuser=0" alt="">
                     </div>
                 </div>
                 <div id="eventDiv6" style="display: none;" class="chosenEvents">
@@ -197,21 +554,19 @@
                         <p class="eventName">Farewell Brunch</p>
                     </div>
                     <div>
-                        <img class="eventcancel" id="eventDiv6Cancel" src="./pictures/X.png" alt="">
+                        <img class="eventcancel" id="eventDiv6Cancel" src="https://lh3.googleusercontent.com/pw/AP1GczPDhNpXYZo_1AnjBG1h9DYcuHArr38Z_bMmzLT_xZ5Zq3WwImoucSSHaNYA1T8DfcStIS499FEynfriG3OTvaulW5_N0uxnbxdyadCikxQ5GfN3b7l_bufWUl8KP3HHm-hX8xRWjtMuPrOYM9Bu3LR7=w32-h32-s-no-gm?authuser=0" alt="">
                     </div>
                 </div>      
             </div>  
         </div>
     </section>  
     <section class="main-scroll-div">
+        <h4 class="eventsh2 goldtext">Other Events</h4>
         <div class="cover">
-            <div class="scrollButton" id="prev-slide">
-                <img src="./pictures/Component 1.png" id="scrollButton" class="slideButtons" alt="left scroll">  
-            </div>
             <div class="scrollImages">
-                <div class="flip-card">
+                <div class="flip-card" id="grownDiv">
                     <div class="flip-card-inner">
-                        <div class="flip-card-front" style="background-image: url('./pictures/dubai-1\ 1\ \(1\).png');">
+                        <div class="flip-card-front" style="background-image: url('https://lh3.googleusercontent.com/pw/AP1GczNvgoROl6hy-8Yy_VR2IjJCzPNVnBwhujRdCOW1Ia6gS2dPSciErQXqXY96ftRpxuCxWP8h_yHZ2X7ydUAPB9nThgqNO_GGBpV5A4bgvKwNJ3JEzdl49wYikXzY7VBbKVPo35X4zPgYLGGc1Nr9leYl=w495-h506-s-no-gm?authuser=0');">
                             <h2>Welcome To Dubai</h2>
                             <p>Wednesday February 12th, 2025</p>
                         </div>
@@ -239,9 +594,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="flip-card">
+                <div class="flip-card" id="safariDiv">
                     <div class="flip-card-inner">
-                        <div class="flip-card-front" style="background-image: url('./pictures/1.png');">
+                        <div class="flip-card-front" style="background-image: url('https://lh3.googleusercontent.com/pw/AP1GczMg9kQmck3ByvRY9rwTBWpGQg1DIXOJ5hcXykltcZP7rtSp7EeSl84d26cAPWlb-OCf-QdkiZHvoka80RFcXuuSmMzEUybQsBP3LSwFVVT7gY047UKZ3KkKT4gAykA7MZGdc3XIg_t7o7YWgm7tz_X_=w335-h316-s-no-gm?authuser=0');">
                             <h2>Dubai Red <br> Dune Safari</h2>
                             <p>Thursday February 13th, 2025</p>
                         </div>
@@ -269,9 +624,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="flip-card">
+                <div class="flip-card" id="pamperedDiv">
                     <div class="flip-card-inner">
-                        <div class="flip-card-front" style="background-image: url('./pictures/2.png');">
+                        <div class="flip-card-front" style="background-image: url('https://lh3.googleusercontent.com/pw/AP1GczPTwMQ1jjLKMLW0IVm6hKZZvNePp2EfHSD9MuL_uKSr5XejP-ZB4mqXmLLFcz1tCK4wROLxe6qTJ9H-hH4qSE8L2_Br2E9fUS8mqZovZWJhECrPdd_ieF3Xrj6d0VCLQxCT96gpj9A70yBf33hbn2dx=w335-h316-s-no-gm?authuser=0');">
                             <h2>Ladies Let’s Get <br> Pampered</h2>
                             <p>Friday February 14th, 2025</p>
                         </div>
@@ -299,9 +654,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="flip-card">
+                <div class="flip-card" id="ballDiv">
                     <div class="flip-card-inner">
-                        <div class="flip-card-front" style="background-image: url('./pictures/3.png');">
+                        <div class="flip-card-front" style="background-image: url('https://lh3.googleusercontent.com/pw/AP1GczMzribAXphuHLuLn9tH8mJ-h3sn_p1gMUYX52hnkcnnbJnjk7EKGbvaUxBVQ4v-XkAUuKhcNvv6P3E-R-ipeUPD82SKREitMw2HODyVggPCqcBhHnFKYtnlXdae4LKsgiaP8mSU3FmKY8rxJ-rYRuNI=w335-h316-s-no-gm?authuser=0');">
                             <h2>Tosan's Valentine <br> Birthday Ball</h2>
                             <p>Friday February 14th, 2025</p>
                         </div>
@@ -329,9 +684,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="flip-card">
+                <div class="flip-card" id="nauticalDiv">
                     <div class="flip-card-inner">
-                        <div class="flip-card-front" style="background-image: url('./pictures/5.png');">
+                        <div class="flip-card-front" style="background-image: url('https://lh3.googleusercontent.com/pw/AP1GczMk_G4lTMAd5nSJnaQJV5xLzM3vOYk2-KFSPPCiLP11__XORK7MTl00V8raCNuMT8X8PUjdRi5PZoOU1_IcjOqNPz3PQRNmORwwuM3Djo6qlU6TtruUhsZXjiX_rTlKRrhu2aP44b1HD6WkTKQvCW5C=w335-h316-s-no-gm?authuser=0');">
                             <h2>Nautical <br> Extravaganza</h2>
                             <p>Saturday February 15th, 2025</p>
                         </div>
@@ -360,8 +715,8 @@
                     </div>
                 </div>
                 <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front" style="background-image: url('./pictures/6.png');">
+                    <div class="flip-card-inner" id="farewellDiv">
+                        <div class="flip-card-front" style="background-image: url('https://lh3.googleusercontent.com/pw/AP1GczOcLWw2rFsa98wBTTwIqOE5ZyrnjiJnhCCiU1uE5XsBEs9_4dRCL0fAlN232ganggs4YwhFjSBTnZXT_RxCBM0eauLSNzJhyFuWy0idp_2pzdNzLnlqzU2Lp_COfWn2yXw-h_uiBPki6-qKYjnBO3nH=w335-h316-s-no-gm?authuser=0');">
                             <h2>Farewell Brunch</h2>
                             <p>Sunday February 16th, 2025</p>
                         </div>
@@ -420,18 +775,14 @@
                     </div>
                 </div>
             </div>
-            <div class="scrollButton1" id="next-slide">
-                <img src="./pictures/Component 7.png" class="slideButtons" id="scrollButton1" alt="right scroll">
+            <div class="arrow">
+                <button id="left" class="left" onclick="left();"> <i class="fa fa-angle-left"></i>
+                </button>
+                <button id="right" class="right" onclick="right();"><i class="fa fa-angle-right"></i>
+                </button>
             </div>
-        </div>     
-    </section>  
-    <footer>
-        <div>
-            <a href=""><img src="./pictures/Tosansdubaibling 1.png" alt=""></a>
-            <p><a href="">Enquiry</a></p>
-            <p><a href="">Travels</a></p>
         </div>
-    </footer>
+    </section>
     
     <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@20.2.0/build/js/intlTelInput.min.js"></script>
     <script>
@@ -506,12 +857,20 @@
         let tshirtSizeP = document.getElementById('tshirtSizeP');
         let demoCheckbox = document.getElementById('demoCheckbox');
         let partnerDetails = document.getElementById('partnerDetails');
+        let grownDiv = document.getElementById('grownDiv');
+        let safariDiv = document.getElementById('safariDiv');
+        let pamperedDiv = document.getElementById('pamperedDiv');
+        let ballDiv = document.getElementById('ballDiv');
+        let nauticalDiv = document.getElementById('nauticalDiv');
+        let farewellDiv = document.getElementById('farewellDiv');
 
+        day3Event1.value='Yes';
+        eventDiv3.style.display = "flex";
+        pamperedDiv.style.display = "none";
 
         grownEvent.addEventListener('click', function(){
                 day1.value='Yes';
                 eventDiv1.style.display = "flex";
-                console
         })
         safariEvent.addEventListener('click', function(){
                 day2.value='Yes';
@@ -541,10 +900,12 @@
         eventDiv1Cancel.addEventListener('click', function(){
             day1.value=' ';
             eventDiv1.style.display = "none";
+            grownDiv.style.display = "flex";
         })
         eventDiv2Cancel.addEventListener('click', function(){
             day2.value=' ';
             eventDiv2.style.display = "none";
+            safariDiv.style.display = "flex";
             if(day3Event1.value === 'Yes'){
                 tshirtSize.style.display = "block";
                 tshirtSizeP.style.display = "block";
@@ -559,6 +920,7 @@
         eventDiv3Cancel.addEventListener('click', function(){
             day3Event1.value=' ';
             eventDiv3.style.display = "none";
+            pamperedDiv.style.display = "flex";
             if(day2.value === 'Yes'){
                 tshirtSize.style.display = "block";
                 tshirtSizeP.style.display = "block";
@@ -573,15 +935,17 @@
         eventDiv4Cancel.addEventListener('click', function(){
             day3Event2.value=' ';
             eventDiv4.style.display = "none";
+            ballDiv.style.display = "flex";
         })
         eventDiv5Cancel.addEventListener('click', function(){
             day4Event2.value=' ';
             eventDiv5.style.display = "none";
+            nauticalDiv.style.display = "flex";
         })
         eventDiv6Cancel.addEventListener('click', function(){
             day5.value=' ';
             eventDiv6.style.display = "none";
-            console.log(day5.value);
+            farewellDiv.style.display = "flex";
         })
         function myFunction() {
             if (demoCheckbox.checked == true){
@@ -628,6 +992,36 @@
                 console.error(error);
             });
         }})
+    </script>
+    <script>
+     
+const scrollImages = document.querySelectorAll(".cover .scrollImages");
+let counter = 0;
+
+function left(){
+    if (counter === 0){
+        counter = scrollImages.length/3 - 1
+    }
+    else{
+        counter--
+    }
+    scroll()
+}
+function right(){
+    if (counter === scrollImages.length/3 - 1){
+        counter = 0
+    }
+    else{
+        counter++
+    }
+    scroll()
+}
+function scroll(){
+    scrollImages.forEach(function(item){
+        item.style.transform = `translateX(-${counter * 1250}px)`;
+    })
+}
+    
     </script>
 </body>
 </html>
