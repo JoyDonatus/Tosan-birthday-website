@@ -30,6 +30,10 @@
    padding: 0;
  }
 
+.otherEvents{
+    border: 1px solid #ECD597;
+}
+
 .hidden{
     display: none;
 }
@@ -52,7 +56,7 @@ label {
   cursor: pointer;
 }
 input[type="checkbox"] + label:before {
-  border: 1px solid #7f83a2;
+  border: 1px solid #ECD597;
   content: "\00a0";
   display: inline-block;
   font: 16px/1em sans-serif;
@@ -62,7 +66,6 @@ input[type="checkbox"] + label:before {
   vertical-align: top;
   width: 16px;
   color: #fff;
-  border-color: #ECD597;
   border-radius: 5px;
 }
 input[type="checkbox"]:checked + label:before {
@@ -75,7 +78,7 @@ input[type="checkbox"]:checked + label:after {
 .inputInfo, select{
     border-color: #ECD597;
     padding-left: 10px;
-}hI 
+}
 input:focus, select:focus { 
     outline: none !important;
     border-color: #ECD597;
@@ -181,6 +184,7 @@ button{
     text-align: center;
     cursor: pointer;
 }
+
 .chosenEvents{
     flex-direction: row;
     align-items: center;
@@ -192,14 +196,7 @@ button{
     padding: 0 10px 0 5px;
     text-align: left;
 }
-.chosenEventsDiv{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: left;
-    text-align: left;
-    padding: 10px 0 0 5px;
-}
+
 .eventName{
   font-family: 'Kozuka Gothic Pro', sans-serif;
   font-size: 18px;
@@ -234,7 +231,6 @@ button{
     border-radius: 20px;
     overflow: hidden;
     height: fit-content;
-    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -245,9 +241,12 @@ button{
 #partnerDetails > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti__flag-container > div.iti__selected-flag > div.iti__flag.iti__globe{
     display: none !important;
 }
-#phone,
-#phone1{ 
-    width: 460px !important;
+#registrationDiv1 > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown,
+#partnerDetails > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown,
+#registrationDiv1 > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown,
+#partnerDetails > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown,
+.buttonLink{ 
+    width: 100% !important;
 }
 .checkBoxClass{
     margin-top: 10px;
@@ -278,11 +277,10 @@ button{
     padding: 40px;
     
 }
-form{
+.form3, .hiddenEvents{
     width: 40%;
     display: flex;
     flex-direction: column;
-    padding-left: 10px;
 }
 #start, #end{
     width: 50%;
@@ -295,7 +293,7 @@ form{
 }
 #dateDiv{
     display: flex;
-    width: 460px;
+    width: 100%;
     gap: 10px;
 }
 hr{
@@ -398,7 +396,30 @@ a{
 select #firstOption{
     opacity: 0.4;
 }
-    </style>
+
+@media only screen and (max-width: 1190px){
+    .containerDiv{
+        flex-direction: column-reverse;
+        padding-right: 0;
+    }
+    .form3, .hiddenEvents{
+        width: 90%;
+    }
+    .cover .arrow{
+        width: 360px;
+        margin-left: 10px;
+    }
+
+.flip-card{
+  height: 316px;
+  margin-right: 10px;
+  margin-left: 10px;
+  width: 350px;
+}
+}
+
+
+</style>
 </head>
 <body class="fullBody">
     <section class="firstSection">
@@ -414,6 +435,34 @@ select #firstOption{
                     <input type="checkbox" id="demoCheckbox" name="checkbox" value="1" onclick="myFunction()">
                     <label for="demoCheckbox">RSVP For Two</label>
                 </div>
+                <div class="otherEvents" style="display: none;">
+                    <p>other Events</p>
+                    <div class="checkBoxClass">
+                        <input type="checkbox" id="event1CheckBox" name="checkbox1" value="9">
+                        <label for="event1CheckBox">Day 1 Event: Welcome to Dubai</label>
+                    </div>
+                    <div class="checkBoxClass">
+                        <input type="checkbox" id="event2CheckBox" name="checkbox2" value="">
+                        <label for="event2CheckBox">Day 2 Event: Dubai Red Dune Desert Safari Welcome to Dubai</label>
+                    </div>
+                    <div class="checkBoxClass">
+                        <input type="checkbox" id="event3CheckBox" name="checkbox3" value="">
+                        <label for="event3CheckBox">Day 3 Event 1: Ladies Let's Get Pampered</label>
+                    </div>
+                    <div class="checkBoxClass">
+                        <input type="checkbox" id="event4CheckBox" name="checkbox4" value="">
+                        <label for="event4CheckBox">Day 3 Event 2: Tosan's Valentine Birthday Ball</label>
+                    </div>
+                    <div class="checkBoxClass">
+                        <input type="checkbox" id="event5CheckBox" name="checkbox5" value="">
+                        <label for="event5CheckBox">Day 4 Event: Nautical Extravaganza</label>
+                    </div>
+                    <div class="checkBoxClass">
+                        <input type="checkbox" id="event6CheckBox" name="checkbox6" value="" checked>
+                        <label for="event6CheckBox">Day 5 Event: Farewell Brunch</label>
+                    </div>
+
+                </div>
                 <div id="registrationDiv1" class="registrationDiv" style="display: block;">
                     <div class="inputDiv">
                         <input class="inputInfo" type="text" name="First Name" autocomplete="given-name" id="firstName3" required="" value="" placeholder="Enter your name">
@@ -421,7 +470,7 @@ select #firstOption{
                     <div class="inputDiv">
                         <input class="inputInfo" type="email" autocomplete="email" name="Email Address" id="emailAddress" required="" value="" placeholder="Enter your email address">
                     </div>
-                    <select style="display: none;" name="Tshirt Size" id="tshirtSize">
+                    <select style="display: none;" name="Tshirt Size" id="tshirtSize" required="">
                         <option id="firstOption" value="" disabled selected hidden>select t-shirt size</option>
                         <option value="XXS">XXS</option>
                         <option value="XS">XS</option>
@@ -439,12 +488,12 @@ select #firstOption{
                     <div id="partnerDetails" style="display: none;">
                         <h2 class="goldtext">Partner's Details</h2>
                         <div class="inputDiv">
-                            <input class="inputInfo" type="text" name="Partner First Name" autocomplete="given-name" id="firstName3" required="" value="" placeholder="Enter your partner's name">
+                            <input class="inputInfo" required="" type="text" name="Partner First Name" autocomplete="given-name" id="firstName32" value="" placeholder="Enter your partner's name">
                         </div>
                         <div class="inputDiv">
-                            <input class="inputInfo" type="email" autocomplete="email" name="Partner Email Address" id="emailAddress" required="" value="" placeholder="Enter your partner's email address">
+                            <input class="inputInfo" type="email" required="" autocomplete="email" name="Partner Email Address" id="emailAddress1" value="" placeholder="Enter your partner's email address">
                         </div>
-                        <select style="display: none;" name="Partner Tshirt Size" id="tshirtSizeP">
+                        <select style="display: none;" name="Partner Tshirt Size" id="tshirtSizeP" required="">
                             <option id="firstOption" value="" disabled selected hidden>select t-shirt size</option>
                             <option value="XXS">XXS</option>
                             <option value="XS">XS</option>
@@ -456,11 +505,11 @@ select #firstOption{
                             <option value="XXXL">XXXL</option>
                         </select>
                         <div class="telPhoneInputDiv">
-                            <input class="inputInfo" id="phone1" type="tel" autocomplete="tel" name="Partner Phone Number" required="" value="" placeholder="Enter your partner's phone number">
+                            <input class="inputInfo" required="" id="phone1" type="tel" autocomplete="tel" name="Partner Phone Number" value="" placeholder="Enter your partner's phone number">
                             <div class="alert alert-info" style="display: none;"></div>
                         </div>
                     </div>
-                    <hr>
+                    <hr style="display: none;">
                     <div class="inputDiv" id="dateDiv">
                         <div id="start"><input class="inputInfo" type="text" name="trip-start"
                             value="" required="" placeholder="Arrival (DD/MM/YYY)">
@@ -469,12 +518,12 @@ select #firstOption{
                             <input class="inputInfo" type="text" name="trip-end"
                             value="" required="" placeholder="Departure (DD/MM/YYY)">
                         </div>
-                    </div>
+                    </div class="buttonLink">
                         <input style="width: 477px; height: 64px; font-family: 'Kozuka Gothic Pro', sans-serif; border: none; border-radius: 20px; font-weight: 500; font-size: 18px; background-color: #ECD597; color: #171717; margin-top: 20px; cursor: pointer;" class="buttonLink" id="sub" type="submit" value="RSVP">
                     
                     <!--<a class="buttonLink" id="sub" href="" ><button id="buttonLink" style="width: 239px; height: 57px; border: none; background-color: #222222; color: white; margin-top: 20px;" type="">Save and Continue</button></a>-->
                 </div>
-                <hr>
+                <hr style="display: none;">
                 <div>
                     <div class="event hidden">
                         <input name="Welcome To Dubai" id="day1" type="text" value="">
@@ -863,8 +912,47 @@ select #firstOption{
         let ballDiv = document.getElementById('ballDiv');
         let nauticalDiv = document.getElementById('nauticalDiv');
         let farewellDiv = document.getElementById('farewellDiv');
+        let firstName3 = document.getElementById("firstName3");
+        let emailAddress1 = document.getElementById("emailAddress1");
+        let phone1 = document.getElementById("phone1");
+        let firstName32 = document.getElementById("firstName32");
+        let event1CheckBox = document.getElementById("event1CheckBox");
+        let event2CheckBox = document.getElementById("event2CheckBox");
+        let event3CheckBox = document.getElementById("event3CheckBox");
+        let event4CheckBox = document.getElementById("event4CheckBox");
+        let event5CheckBox = document.getElementById("event5CheckBox");
+        let event6CheckBox = document.getElementById("event6CheckBox");
+
+
+
+        function myFunction() {
+            if (demoCheckbox.checked == true){
+                partnerDetails.style.display = "block";
+                firstName32.required = true;
+                emailAddress1.required = true;
+                phone1.required = true;
+            }
+            else if (((demoCheckbox.checked == true) && (day2.value === 'Yes')) || ((demoCheckbox.checked == true) && (day3Event1.value === 'Yes'))){
+                    tshirtSizeP.required = true;
+                    tshirtSize.required = true;
+                }
+            else {
+                partnerDetails.style.display = "none";
+                firstName32.required = false;
+                emailAddress1.required = false;
+                phone1.required = false;
+                tshirtSizeP.required = false;
+                tshirtSize.required = false;
+            }
+        }
+        firstName32.required = false;
+        emailAddress1.required = false;
+        phone1.required = false;
+        tshirtSizeP.required = true;
+        tshirtSize.required = false;
 
         day5.value='Yes';
+        console.log(day5.value);
         eventDiv6.style.display = "flex";
         farewellDiv.style.display = "none";
 
@@ -872,31 +960,124 @@ select #firstOption{
                 day1.value='Yes';
                 eventDiv1.style.display = "flex";
         })
+        event1CheckBox.addEventListener("click", function(){
+            if (event1CheckBox.checked == true){
+                day1.value='Yes';
+                eventDiv1.style.display = "flex";
+            } else {
+                day1.value=' ';
+                eventDiv1.style.display = "none";
+            }
+        })
+
         safariEvent.addEventListener('click', function(){
                 day2.value='Yes';
                 tshirtSize.style.display = "block";
                 tshirtSizeP.style.display = "block";
                 eventDiv2.style.display = "flex";
+                tshirtSize.required = true;
         })
+        event2CheckBox.addEventListener("click", function(){
+            if (event2CheckBox.checked == true){
+                day2.value='Yes';
+                tshirtSize.style.display = "block";
+                tshirtSizeP.style.display = "block";
+                eventDiv2.style.display = "flex";
+            } else {
+                day2.value=' ';
+                eventDiv2.style.display = "none";
+
+                if(day3Event1.value === 'Yes'){
+                    tshirtSize.style.display = "block";
+                    tshirtSizeP.style.display = "block";
+                }
+                else{
+                    tshirtSize.style.display = "none";
+                    tshirtSize.selectedIndex = 0;
+                    tshirtSizeP.style.display = "none";
+                    tshirtSizeP.selectedIndex = 0;
+                } 
+            }
+        })
+
         pamperedEvent.addEventListener('click', function(){
                 day3Event1.value='Yes';
+                tshirtSize.required = true;
                 eventDiv3.style.display = "flex";
                 tshirtSize.style.display = "block";
                 tshirtSizeP.style.display = "block";
+                tshirtSize.required = true;
         })
+        event3CheckBox.addEventListener("click", function(){
+            if (event3CheckBox.checked){
+                day3Event1.value='Yes';
+                eventDiv3.style.display = "flex";
+                tshirtSize.required = true;
+                tshirtSize.style.display = "block";
+                tshirtSizeP.style.display = "block";
+            } else {
+                day3Event1.value=' ';
+                eventDiv3.style.display = "none";
+                pamperedDiv.style.display = "flex";
+                if(day2.value === 'Yes'){
+                    tshirtSize.style.display = "block";
+                    tshirtSizeP.style.display = "block";
+                }
+                else{
+                    tshirtSize.style.display = "none";
+                    tshirtSizeP.style.display = "none";
+                    tshirtSizeP.selectedIndex = 0;
+                    tshirtSize.selectedIndex = 0;
+                }
+            }
+        })
+
         tosanEvent.addEventListener('click', function(){
                 day3Event2.value='Yes';
                 eventDiv4.style.display = "flex";
         })
+        event4CheckBox.addEventListener("click", function(){
+            if (event4CheckBox.checked == true){
+                day3Event2.value='Yes';
+                eventDiv4.style.display = "flex";
+            } else {
+                day3Event2.value=' ';
+                eventDiv4.style.display = "none";
+                ballDiv.style.display = "flex";
+                }
+        })
+
         nauticalEvent.addEventListener('click', function(){
                 day4Event2.value='Yes';
                 eventDiv5.style.display = "flex";
         })
+        event5CheckBox.addEventListener("click", function(){
+            if (event5CheckBox.checked == true){
+                day4Event2.value='Yes';
+                eventDiv5.style.display = "flex";
+            } else {
+                day4Event2.value=' ';
+                eventDiv5.style.display = "none";
+                nauticalDiv.style.display = "flex";
+            }
+        })
+
         farewellEvent.addEventListener('click', function(){
                 day5.value='Yes';
                 eventDiv6.style.display = "flex";
-                console.log(day5.value);
         })
+        event6CheckBox.addEventListener("click", function(){
+            if (event6CheckBox.checked == true){
+                day5.value='Yes';
+                eventDiv6.style.display = "flex";
+            } else {
+                day5.value=' ';
+                eventDiv6.style.display = "none";
+                farewellDiv.style.display = "flex";
+            }
+        })
+
+
         eventDiv1Cancel.addEventListener('click', function(){
             day1.value=' ';
             eventDiv1.style.display = "none";
@@ -910,11 +1091,17 @@ select #firstOption{
                 tshirtSize.style.display = "block";
                 tshirtSizeP.style.display = "block";
             }
+            else if(demoCheckbox.checked === true && day3Event1.value === 'Yes'){
+                tshirtSize.required = true;
+                tshirtSizeP.required = true;
+            }
             else{
                 tshirtSize.style.display = "none";
                 tshirtSize.selectedIndex = 0;
                 tshirtSizeP.style.display = "none";
                 tshirtSizeP.selectedIndex = 0;
+                tshirtSize.required = false;
+                tshirtSizeP.required = false;
             }   
         })
         eventDiv3Cancel.addEventListener('click', function(){
@@ -925,11 +1112,17 @@ select #firstOption{
                 tshirtSize.style.display = "block";
                 tshirtSizeP.style.display = "block";
             }
+            else if(demoCheckbox.checked === true && day2.value === 'Yes'){
+                tshirtSize.required = true;
+                tshirtSizeP.required = true;
+            }
             else{
                 tshirtSize.style.display = "none";
                 tshirtSizeP.style.display = "none";
                 tshirtSizeP.selectedIndex = 0;
                 tshirtSize.selectedIndex = 0;
+                tshirtSize.required = false;
+                tshirtSizeP.required = false;
             }
         })
         eventDiv4Cancel.addEventListener('click', function(){
@@ -947,13 +1140,8 @@ select #firstOption{
             eventDiv6.style.display = "none";
             farewellDiv.style.display = "flex";
         })
-        function myFunction() {
-            if (demoCheckbox.checked == true){
-                partnerDetails.style.display = "block";
-            } else {
-                partnerDetails.style.display = "none";
-            }
-        }
+        
+    
     </script>
     <script>
         
@@ -999,27 +1187,57 @@ const scrollImages = document.querySelectorAll(".cover .scrollImages");
 let counter = 0;
 
 function left(){
-    if (counter === 0){
-        counter = scrollImages.length/3 - 1
-    }
+    if (window.matchMedia("(min-width: 1200px)").matches){
+        if (counter === 0){
+        counter = scrollImages.length/3
+        }
+        else{
+            counter--
+        }
+        scroll()
+        }
     else{
-        counter--
-    }
-    scroll()
-}
+        if (counter === 0){
+        counter = scrollImages.length/4
+        }
+        else{
+            counter--
+        }
+        scroll()
+        }
+    }  
 function right(){
-    if (counter === scrollImages.length/3 - 1){
+    if (window.matchMedia("(min-width: 1200px)").matches){
+        if (counter === scrollImages.length/3){
         counter = 0
+        }
+        else{
+            counter++
+        }
+        scroll()
+        }
+    else{
+        if (counter === scrollImages.length/4){
+        counter = 0
+        }
+        else{
+            counter++
+        }
+        scroll()
+        }
+    } 
+function scroll(){
+    if (window.matchMedia("(min-width: 1200px)").matches){
+        scrollImages.forEach(function(item){
+        item.style.transform = `translateX(-${counter * 1200}px)`;
+    })
     }
     else{
-        counter++
-    }
-    scroll()
-}
-function scroll(){
-    scrollImages.forEach(function(item){
-        item.style.transform = `translateX(-${counter * 1250}px)`;
+        scrollImages.forEach(function(item){
+        item.style.transform = `translateX(-${counter * 380}px)`;
     })
+    }
+    
 }
     
     </script>

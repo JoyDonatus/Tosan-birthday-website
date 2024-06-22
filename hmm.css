@@ -45,9 +45,39 @@ body{
     font-weight: 400;
     font-size: 218.19px;
 }
-nav{
-    background-color: #756C53;
+.menuDiv{
+    background-color: #ECD597;
+    width: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
+.logoAndMenuDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: top;
+}
+.times{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+li{
+    height: 60px;
+}
+
 button{
     background-color: #ECD597;
     color: #171717;
@@ -92,12 +122,6 @@ h1{
 #accommodationPage{
     background-image: url("./pictures/Component\ 11.png");
 }
-.logoAndMenuDiv{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: top;
-}
 
 .celebrantSpeech{
  display: flex;
@@ -122,5 +146,8 @@ footer{
 }
 .listItem{
     padding-left: 20px;
+}
+li{
+    list-style-type: none;
 }
 

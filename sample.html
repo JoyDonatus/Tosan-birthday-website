@@ -13,7 +13,9 @@
       integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./script.js"></script>
     <style>
         @import url('https://fonts.cdnfonts.com/css/photograph-signature');
 @import url('https://fonts.cdnfonts.com/css/kozuka-gothic-pro');
@@ -613,8 +615,8 @@ select #firstOption{
         <h4 class="eventsh2 goldtext">Other Events</h4>
         <div class="cover">
             <div class="scrollImages">
-                <div class="flip-card" id="grownDiv">
-                    <div class="flip-card-inner">
+                <div class="swiper-wrapper flip-card" id="grownDiv">
+                    <div class="swiper-slide flip-card-inner">
                         <div class="flip-card-front" style="background-image: url('https://lh3.googleusercontent.com/pw/AP1GczNvgoROl6hy-8Yy_VR2IjJCzPNVnBwhujRdCOW1Ia6gS2dPSciErQXqXY96ftRpxuCxWP8h_yHZ2X7ydUAPB9nThgqNO_GGBpV5A4bgvKwNJ3JEzdl49wYikXzY7VBbKVPo35X4zPgYLGGc1Nr9leYl=w495-h506-s-no-gm?authuser=0');">
                             <h2>Welcome To Dubai</h2>
                             <p>Wednesday February 12th, 2025</p>
@@ -830,6 +832,7 @@ select #firstOption{
                 <button id="right" class="right" onclick="right();"><i class="fa fa-angle-right"></i>
                 </button>
             </div>
+            <div class="swiper-pagination"></div>
         </div>
     </section>
     
@@ -951,9 +954,10 @@ select #firstOption{
         tshirtSizeP.required = true;
         tshirtSize.required = false;
 
-        day1.value='Yes';
-        eventDiv1.style.display = "flex";
-        grownDiv.style.display = "none";
+        day5.value='Yes';
+        console.log(day5.value);
+        eventDiv6.style.display = "flex";
+        farewellDiv.style.display = "none";
 
         grownEvent.addEventListener('click', function(){
                 day1.value='Yes';
@@ -1142,6 +1146,7 @@ select #firstOption{
         
     
     </script>
+    <script src="js/swiper-bundle.min.js"></script>
     <script>
         
         let form3 = document.querySelector("#form3");  
@@ -1181,64 +1186,22 @@ select #firstOption{
         }})
     </script>
     <script>
-     
-const scrollImages = document.querySelectorAll(".cover .scrollImages");
-let counter = 0;
-
-function left(){
-    if (window.matchMedia("(min-width: 1200px)").matches){
-        if (counter === 0){
-        counter = scrollImages.length/3
-        }
-        else{
-            counter--
-        }
-        scroll()
-        }
-    else{
-        if (counter === 0){
-        counter = scrollImages.length/4
-        }
-        else{
-            counter--
-        }
-        scroll()
-        }
-    }  
-function right(){
-    if (window.matchMedia("(min-width: 1200px)").matches){
-        if (counter === scrollImages.length/3){
-        counter = 0
-        }
-        else{
-            counter++
-        }
-        scroll()
-        }
-    else{
-        if (counter === scrollImages.length/4){
-        counter = 0
-        }
-        else{
-            counter++
-        }
-        scroll()
-        }
-    } 
-function scroll(){
-    if (window.matchMedia("(min-width: 1200px)").matches){
-        scrollImages.forEach(function(item){
-        item.style.transform = `translateX(-${counter * 1200}px)`;
-    })
-    }
-    else{
-        scrollImages.forEach(function(item){
-        item.style.transform = `translateX(-${counter * 380}px)`;
-    })
-    }
-    
-}
-    
+        var swiper = new Swiper('.scrollImages', {
+    slidesPerView : 3,
+    spaceBetween: 20,
+    slidesPerGroup: 3,
+    loop: true,
+    centerSlider: "true",
+    fade: "true",
+    pagination:{
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation:{
+        nextEl : ".right",
+        prevEl: ".left"
+    },
+})
     </script>
 </body>
 </html>
