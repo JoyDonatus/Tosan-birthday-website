@@ -406,7 +406,7 @@ select #firstOption{
         width: 90%;
     }
     .cover .arrow{
-        width: 360px;
+        width: 390px;
         margin-left: 10px;
     }
 
@@ -951,9 +951,11 @@ select #firstOption{
         tshirtSizeP.required = true;
         tshirtSize.required = false;
 
+       
         day2.value='Yes';
         eventDiv2.style.display = "flex";
         safariDiv.style.display = "none";
+
 
         grownEvent.addEventListener('click', function(){
                 day1.value='Yes';
@@ -1228,12 +1230,12 @@ function right(){
 function scroll(){
     if (window.matchMedia("(min-width: 1200px)").matches){
         scrollImages.forEach(function(item){
-        item.style.transform = `translateX(-${counter * 1200}px)`;
+        item.style.transform = `translateX(-${counter * 1180}px)`;
     })
     }
     else{
         scrollImages.forEach(function(item){
-        item.style.transform = `translateX(-${counter * 380}px)`;
+        item.style.transform = `translateX(-${counter * 390}px)`;
     })
     }
     
