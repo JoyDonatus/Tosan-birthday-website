@@ -16,8 +16,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
         @import url('https://fonts.cdnfonts.com/css/photograph-signature');
-@import url('https://fonts.cdnfonts.com/css/kozuka-gothic-pro');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.cdnfonts.com/css/kozuka-gothic-pro');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 
 * {
@@ -190,17 +190,18 @@ button{
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: fit-content;
+    height: 69px;
     background-color: #FFFAED;
     margin: 5px;
     padding: 0 10px 0 5px;
     text-align: left;
 }
+
 .eventName{
   font-family: 'Kozuka Gothic Pro', sans-serif;
   font-size: 18px;
   font-weight: 700;
-  line-height: 24px;
+  line-height: 52px;
   text-align: left;
   color: #171717;
 }
@@ -267,7 +268,20 @@ button{
 #tshirtSize > option:nth-child(1){
     color: #393939;
 }
-
+.containerDiv{
+    display: flex;
+    width: 100%;
+    align-items: top;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 40px;
+    
+}
+.form3, .hiddenEvents{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
 #start, #end{
     width: 50%;
     margin-top: 10px;
@@ -309,18 +323,25 @@ a{
     position: relative;
     display: flex;
     transition: 0.5s;
-    border-radius: 10px; 
-    width: 100%;
-    gap: 20px;
-    margin-left: 20px;
+    border-radius: 10px;
+    margin-left: 30px;  
+    width: max-content;
 }
 
 .cover .arrow button{
   font-size: 20px;
+  width: 100px;
+  height: 100px;
   top: 50%;
   cursor: pointer;
-  width: 40px;
-  height: 70px
+}
+.cover .arrow{
+  width: 1200px;
+  position: absolute;
+  justify-content: space-between;
+  display: flex;
+  top: 40%;
+  margin-left: 15px;
 }
 
 .main-scroll-div{
@@ -329,6 +350,17 @@ a{
   align-items: center;
   background-color: #ffffff00;
   width: max-content;
+}
+
+.flip-card{
+  perspective: 1000px;
+  height: 316px;
+  overflow: hidden;
+  border-radius: 25px;
+  margin-right: 10px;
+  width: 400px;
+  background-color: #ffffff00;
+  padding-right: 50px;
 }
 
 .flip-card-front{
@@ -364,42 +396,28 @@ a{
 select #firstOption{
     opacity: 0.4;
 }
+
+@media only screen and (max-width: 1190px){
+    .containerDiv{
+        flex-direction: column-reverse;
+        padding-right: 0;
+    }
+    .form3, .hiddenEvents{
+        width: 90%;
+    }
+    .cover .arrow{
+        width: 390px;
+        margin-left: 10px;
+    }
+
 .flip-card{
-  perspective: 1000px;
   height: 316px;
-  overflow: hidden;
-  border-radius: 25px;
-  background-color: #ffffff00;
-  height: 316px;
-    width: 350px;
+  margin-right: 10px;
+  margin-left: 10px;
+  width: 350px;
+}
 }
 
-.containerDiv{
-    display: flex;
-    width: 100%;
-    align-items: top;
-    justify-content: space-between;
-    gap: 40px;
-    padding: 20px;
-    flex-direction: column-reverse;
-    padding-right: 0;
-    
-}
-.form3, .hiddenEvents{
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-}
-
-.cover .arrow{
-    width: 370px;
-    margin-left: 10px;
-    margin-right: 10px;
-  position: absolute;
-  justify-content: space-between;
-  display: flex;
-  top: 40%;
-}
 
 </style>
 </head>
@@ -933,9 +951,9 @@ select #firstOption{
         tshirtSizeP.required = true;
         tshirtSize.required = false;
 
-        day5.value='Yes';
-        eventDiv6.style.display = "flex";
-        farewellDiv.style.display = "none";
+        day3Event2.value='Yes';
+        eventDiv4.style.display = "flex";
+        ballDiv.style.display = "none";
 
 
         grownEvent.addEventListener('click', function(){
@@ -1164,32 +1182,64 @@ select #firstOption{
         }})
     </script>
     <script>
-        const scrollImages = document.querySelectorAll(".cover .scrollImages");
+     
+const scrollImages = document.querySelectorAll(".cover .scrollImages");
 let counter = 0;
 
 function left(){
-    if (counter === 0){
+    if (window.matchMedia("(min-width: 1200px)").matches){
+        if (counter === 0){
+        counter = scrollImages.length/3
+        }
+        else{
+            counter--
+        }
+        scroll()
+        }
+    else{
+        if (counter === 0){
         counter = scrollImages.length/4
-    }
-    else{
-        counter--
-    }
-    scroll()
-}
+        }
+        else{
+            counter--
+        }
+        scroll()
+        }
+    }  
 function right(){
-    if (counter === scrollImages.length/4){
+    if (window.matchMedia("(min-width: 1200px)").matches){
+        if (counter === scrollImages.length/3){
         counter = 0
+        }
+        else{
+            counter++
+        }
+        scroll()
+        }
+    else{
+        if (counter === scrollImages.length/4){
+        counter = 0
+        }
+        else{
+            counter++
+        }
+        scroll()
+        }
+    } 
+function scroll(){
+    if (window.matchMedia("(min-width: 1200px)").matches){
+        scrollImages.forEach(function(item){
+        item.style.transform = `translateX(-${counter * 1180}px)`;
+    })
     }
     else{
-        counter++
-    }
-    scroll()
-}
-function scroll(){
-    scrollImages.forEach(function(item){
-        item.style.transform = `translateX(-${counter * 370}px)`;
+        scrollImages.forEach(function(item){
+        item.style.transform = `translateX(-${counter * 390}px)`;
     })
+    }
+    
 }
+    
     </script>
 </body>
 </html>

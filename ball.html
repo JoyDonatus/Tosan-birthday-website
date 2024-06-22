@@ -397,7 +397,7 @@ select #firstOption{
     opacity: 0.4;
 }
 
-@media only screen and (max-width: 1190px){
+@media only screen and (max-width: 1199px){
     .containerDiv{
         flex-direction: column-reverse;
         padding-right: 0;
@@ -410,11 +410,11 @@ select #firstOption{
         margin-left: 10px;
     }
 
-.flip-card{
-  height: 316px;
-  margin-right: 10px;
-  margin-left: 10px;
-  width: 350px;
+    .flip-card{
+        height: 316px;
+        margin-right: 10px;
+        margin-left: 10px;
+        width: 350px;
 }
 }
 
@@ -1207,8 +1207,27 @@ function left(){
         }
     }  
 function right(){
-    if (window.matchMedia("(min-width: 1200px)").matches){
-        if (counter === scrollImages.length/3){
+    if (window.matchMedia("(min-width: 1300px)").matches){
+        if (counter === scrollImages.length/2){
+        counter = 0
+        }
+        else{
+            counter++
+        }
+        scroll()
+        }
+    else{
+        if (counter === scrollImages.length/4){
+        counter = 0
+        }
+        else{
+            counter++
+        }
+        scroll()
+        }
+    
+        if (window.matchMedia("(min-width: 1200px)").matches){
+        if (counter === scrollImages.length/2){
         counter = 0
         }
         else{
@@ -1227,14 +1246,34 @@ function right(){
         }
     } 
 function scroll(){
-    if (window.matchMedia("(min-width: 1200px)").matches){
+    if (window.matchMedia("(min-width: 1300px)").matches){
+        scrollImages.forEach(function(item){
+        item.style.transform = `translateX(-${counter * 1280}px)`;
+        })
+    }  
+    else if (window.matchMedia("(min-width: 1200px)").matches){
         scrollImages.forEach(function(item){
         item.style.transform = `translateX(-${counter * 1180}px)`;
+        })
+    }       
+    else if(window.matchMedia("(min-width: 810px)").matches){
+        scrollImages.forEach(function(item){
+        item.style.transform = `translateX(-${counter * 790}px)`;
+    })
+    }
+    else if(window.matchMedia("(min-width: 500px)").matches){
+        scrollImages.forEach(function(item){
+        item.style.transform = `translateX(-${counter * 480}px)`;
+    })
+    }
+    else if(window.matchMedia("(min-width: 420px)").matches){
+        scrollImages.forEach(function(item){
+        item.style.transform = `translateX(-${counter * 400}px)`;
     })
     }
     else{
         scrollImages.forEach(function(item){
-        item.style.transform = `translateX(-${counter * 390}px)`;
+        item.style.transform = `translateX(-${counter * 370}px)`;
     })
     }
     

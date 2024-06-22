@@ -28,6 +28,11 @@
   body{
   margin: 0;
    padding: 0;
+   width: 100%;
+   min-height: 100vh;
+ }
+ section{
+    width: 400px;
  }
 
 .otherEvents{
@@ -186,7 +191,7 @@ button{
 }
 
 .chosenEvents{
-    flex-direction: row;
+    flex-direction: column-reverse;
     align-items: center;
     justify-content: space-between;
     width: 100%;
@@ -195,6 +200,14 @@ button{
     margin: 5px;
     padding: 0 10px 0 5px;
     text-align: left;
+}
+.chosenEventsDiv{
+    flex-direction: row;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
 }
 .eventName{
   font-family: 'Kozuka Gothic Pro', sans-serif;
@@ -392,9 +405,9 @@ select #firstOption{
 }
 
 .cover .arrow{
-    width: 370px;
-    margin-left: 10px;
-    margin-right: 10px;
+    width: 740px;
+    margin-left: 15px;
+    margin-right: 15px;
   position: absolute;
   justify-content: space-between;
   display: flex;
@@ -933,9 +946,9 @@ select #firstOption{
         tshirtSizeP.required = true;
         tshirtSize.required = false;
 
-        day5.value='Yes';
-        eventDiv6.style.display = "flex";
-        farewellDiv.style.display = "none";
+        day3Event2.value='Yes';
+        eventDiv4.style.display = "flex";
+        ballDiv.style.display = "none";
 
 
         grownEvent.addEventListener('click', function(){
