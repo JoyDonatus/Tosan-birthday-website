@@ -16,8 +16,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
         @import url('https://fonts.cdnfonts.com/css/photograph-signature');
-@import url('https://fonts.cdnfonts.com/css/kozuka-gothic-pro');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.cdnfonts.com/css/kozuka-gothic-pro');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 
 * {
@@ -98,7 +98,7 @@ select>options:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
 
-  .flip-card:hover .flip-card-inner {
+.flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
   }
 
@@ -324,8 +324,11 @@ a{
     display: flex;
     transition: 0.5s;
     border-radius: 10px;
-    margin-left: 30px;  
-    width: max-content;
+    gap: 21px;  
+    margin-left: 30px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .cover .arrow button{
@@ -336,12 +339,22 @@ a{
   cursor: pointer;
 }
 .cover .arrow{
-  width: 1200px;
+  width: 1245px;
   position: absolute;
   justify-content: space-between;
   display: flex;
   top: 40%;
-  margin-left: 15px;
+  margin-left: 10px;
+  margin-right: 10px; 
+}
+
+.flip-card{
+  perspective: 1000px;
+  height: 316px;
+  overflow: hidden;
+  border-radius: 25px;
+  width: 390px;
+  background-color: #ffffff00;
 }
 
 .main-scroll-div{
@@ -350,17 +363,6 @@ a{
   align-items: center;
   background-color: #ffffff00;
   width: max-content;
-}
-
-.flip-card{
-  perspective: 1000px;
-  height: 316px;
-  overflow: hidden;
-  border-radius: 25px;
-  margin-right: 10px;
-  width: 400px;
-  background-color: #ffffff00;
-  padding-right: 50px;
 }
 
 .flip-card-front{
@@ -396,28 +398,6 @@ a{
 select #firstOption{
     opacity: 0.4;
 }
-
-@media only screen and (max-width: 1190px){
-    .containerDiv{
-        flex-direction: column-reverse;
-        padding-right: 0;
-    }
-    .form3, .hiddenEvents{
-        width: 90%;
-    }
-    .cover .arrow{
-        width: 390px;
-        margin-left: 10px;
-    }
-
-.flip-card{
-  height: 316px;
-  margin-right: 10px;
-  margin-left: 10px;
-  width: 350px;
-}
-}
-
 
 </style>
 </head>
@@ -951,9 +931,9 @@ select #firstOption{
         tshirtSizeP.required = true;
         tshirtSize.required = false;
 
-        day3Event2.value='Yes';
-        eventDiv4.style.display = "flex";
-        ballDiv.style.display = "none";
+        day2.value='Yes';
+        eventDiv2.style.display = "flex";
+        safariDiv.style.display = "none";
 
 
         grownEvent.addEventListener('click', function(){
@@ -1183,62 +1163,33 @@ select #firstOption{
     </script>
     <script>
      
-const scrollImages = document.querySelectorAll(".cover .scrollImages");
-let counter = 0;
+    const scrollImages = document.querySelectorAll(".cover .scrollImages");
+    let counter = 0;
 
 function left(){
-    if (window.matchMedia("(min-width: 1200px)").matches){
-        if (counter === 0){
+    if (counter === 0){
         counter = scrollImages.length/3
-        }
-        else{
-            counter--
-        }
-        scroll()
-        }
-    else{
-        if (counter === 0){
-        counter = scrollImages.length/4
-        }
-        else{
-            counter--
-        }
-        scroll()
-        }
-    }  
-function right(){
-    if (window.matchMedia("(min-width: 1200px)").matches){
-        if (counter === scrollImages.length/3){
-        counter = 0
-        }
-        else{
-            counter++
-        }
-        scroll()
-        }
-    else{
-        if (counter === scrollImages.length/4){
-        counter = 0
-        }
-        else{
-            counter++
-        }
-        scroll()
-        }
-    } 
-function scroll(){
-    if (window.matchMedia("(min-width: 1200px)").matches){
-        scrollImages.forEach(function(item){
-        item.style.transform = `translateX(-${counter * 1180}px)`;
-    })
     }
     else{
-        scrollImages.forEach(function(item){
-        item.style.transform = `translateX(-${counter * 390}px)`;
-    })
+        counter--
     }
-    
+    scroll()
 }
+function right(){
+    if (counter === scrollImages.length/3){
+        counter = 0
+    }
+    else{
+        counter++
+    }
+    scroll()
+}
+function scroll(){
+    scrollImages.forEach(function(item){
+        item.style.transform = `translateX(-${counter * 1245}px)`;
+    })
+}
+
     
     </script>
 </body>
