@@ -336,7 +336,7 @@ a{
   cursor: pointer;
 }
 .cover .arrow{
-  width: 1200px;
+  width: 1250px;
   position: absolute;
   justify-content: space-between;
   display: flex;
@@ -1183,62 +1183,33 @@ select #firstOption{
     </script>
     <script>
      
-const scrollImages = document.querySelectorAll(".cover .scrollImages");
-let counter = 0;
+    const scrollImages = document.querySelectorAll(".cover .scrollImages");
+    let counter = 0;
 
 function left(){
-    if (window.matchMedia("(min-width: 1200px)").matches){
-        if (counter === 0){
+    if (counter === 0){
         counter = scrollImages.length/3
-        }
-        else{
-            counter--
-        }
-        scroll()
-        }
-    else{
-        if (counter === 0){
-        counter = scrollImages.length/4
-        }
-        else{
-            counter--
-        }
-        scroll()
-        }
-    }  
-function right(){
-    if (window.matchMedia("(min-width: 1200px)").matches){
-        if (counter === scrollImages.length/3){
-        counter = 0
-        }
-        else{
-            counter++
-        }
-        scroll()
-        }
-    else{
-        if (counter === scrollImages.length/4){
-        counter = 0
-        }
-        else{
-            counter++
-        }
-        scroll()
-        }
-    } 
-function scroll(){
-    if (window.matchMedia("(min-width: 1200px)").matches){
-        scrollImages.forEach(function(item){
-        item.style.transform = `translateX(-${counter * 1180}px)`;
-    })
     }
     else{
-        scrollImages.forEach(function(item){
-        item.style.transform = `translateX(-${counter * 390}px)`;
-    })
+        counter--
     }
-    
+    scroll()
 }
+function right(){
+    if (counter === scrollImages.length/3){
+        counter = 0
+    }
+    else{
+        counter++
+    }
+    scroll()
+}
+function scroll(){
+    scrollImages.forEach(function(item){
+        item.style.transform = `translateX(-${counter * 1310}px)`;
+    })
+}
+
     
     </script>
 </body>
