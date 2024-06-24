@@ -396,7 +396,7 @@ a{
 select #firstOption{
     opacity: 0.4;
 }
-@media only screen and (max-width: 390px){
+@media only screen and (max-width: 810px){
   .flip-card{
   perspective: 1000px;
   height: 316px;
@@ -1227,7 +1227,7 @@ select #firstOption{
 let counter = 0;
 
 function left(){
-    if (window.matchMedia("(max-width: 600px)").matches) {
+    if (window.matchMedia("(max-width: 810px)").matches) {
         if (counter === 0){
         counter = scrollImages.length/4
     }
@@ -1246,7 +1246,7 @@ function left(){
     scroll()
 }
 function right(){
-    if (window.matchMedia("(max-width: 600px)").matches) {
+    if (window.matchMedia("(max-width: 810px)").matches) {
         if (counter === scrollImages.length/4){
         counter = 0
     }
@@ -1265,7 +1265,7 @@ function right(){
     scroll()
 }
 function scroll(){
-    if (window.matchMedia("(max-width: 600px)").matches) {
+    if (window.matchMedia("(max-width: 810px)").matches) {
         scrollImages.forEach(function(item){
         item.style.transform = `translateX(-${counter * 370}px)`;
     })
