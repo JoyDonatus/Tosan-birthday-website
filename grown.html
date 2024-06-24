@@ -396,6 +396,69 @@ a{
 select #firstOption{
     opacity: 0.4;
 }
+@media only screen and (max-width: 390px){
+  .flip-card{
+  perspective: 1000px;
+  height: 316px;
+  overflow: hidden;
+  border-radius: 25px;
+  background-color: #ffffff00;
+  width: 350px;
+  padding-right: 10px;
+}
+
+.cover .scrollImages{
+    position: relative;
+    display: flex;
+    transition: 0.5s;
+    border-radius: 10px; 
+    width: 100%;
+    margin-left: 20px;
+}
+
+.cover .arrow button{
+  font-size: 20px;
+  top: 50%;
+  cursor: pointer;
+  width: 40px;
+  height: 70px
+}
+
+.containerDiv{
+    display: flex;
+    width: 100%;
+    align-items: top;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 20px;
+    flex-direction: column-reverse;
+    padding-right: 0;
+    
+}
+.form3, .hiddenEvents{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+.eventName{
+  font-family: 'Kozuka Gothic Pro', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: left;
+  color: #171717;
+}
+.cover .arrow{
+  width: 370px;
+  margin-left: 10px;
+  margin-right: 10px;
+  position: absolute;
+  justify-content: space-between;
+  display: flex;
+  top: 40%;
+}
+}
+
 
 </style>
 </head>
@@ -1160,33 +1223,60 @@ select #firstOption{
         }})
     </script>
     <script>
-     
-const scrollImages = document.querySelectorAll(".cover .scrollImages");
+     const scrollImages = document.querySelectorAll(".cover .scrollImages");
 let counter = 0;
+
 function left(){
-    if (counter === 0){
+    if (window.matchMedia("(max-width: 600px)").matches) {
+        if (counter === 0){
+        counter = scrollImages.length/4
+    }
+    else{
+        counter--
+    }
+    }
+    else{
+        if (counter === 0){
         counter = scrollImages.length/3
     }
     else{
         counter--
     }
+    }
     scroll()
 }
 function right(){
-    if (counter === scrollImages.length/3){
+    if (window.matchMedia("(max-width: 600px)").matches) {
+        if (counter === scrollImages.length/4){
         counter = 0
     }
     else{
         counter++
     }
+    }
+    else{
+        if (counter === scrollImages.length/3){
+        counter = 0
+        }
+        else{
+            counter++
+        }
+    }
     scroll()
 }
 function scroll(){
-    scrollImages.forEach(function(item){
+    if (window.matchMedia("(max-width: 600px)").matches) {
+        scrollImages.forEach(function(item){
+        item.style.transform = `translateX(-${counter * 370}px)`;
+    })
+    }
+   else{ scrollImages.forEach(function(item){
         item.style.transform = `translateX(-${counter * 1180}px)`;
     })
 }
-    
+   
+}
+
     </script>
 </body>
 </html>
