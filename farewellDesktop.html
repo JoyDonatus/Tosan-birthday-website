@@ -398,7 +398,69 @@ a{
 select #firstOption{
     opacity: 0.4;
 }
+@media only screen and (max-width: 1200px){
+  .flip-card{
+  perspective: 1000px;
+  height: 316px;
+  overflow: hidden;
+  border-radius: 25px;
+  background-color: #ffffff00;
+  height: 316px;
+  width: 350px;
+}
 
+.cover .scrollImages{
+    position: relative;
+    display: flex;
+    transition: 0.5s;
+    border-radius: 10px; 
+    width: 100%;
+    gap: 20px;
+    margin-left: 20px;
+}
+
+.cover .arrow button{
+  font-size: 20px;
+  top: 50%;
+  cursor: pointer;
+  width: 40px;
+  height: 70px
+}
+
+.containerDiv{
+    display: flex;
+    width: 100%;
+    align-items: top;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 20px;
+    flex-direction: column-reverse;
+    padding-right: 0;
+    
+}
+.form3, .hiddenEvents{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+.eventName{
+  font-family: 'Kozuka Gothic Pro', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: left;
+  color: #171717;
+}
+.cover .arrow{
+  width: 370px;
+  margin-left: 10px;
+  margin-right: 10px;
+  position: absolute;
+  justify-content: space-between;
+  display: flex;
+  top: 40%;
+}
+}
 </style>
 </head>
 <body class="fullBody">
@@ -1166,7 +1228,8 @@ select #firstOption{
     const scrollImages = document.querySelectorAll(".cover .scrollImages");
     let counter = 0;
 
-function left(){
+    if (window.matchMedia("(min-width: 1200px)").matches) {
+        function left(){
     if (counter === 0){
         counter = scrollImages.length/3
     }
@@ -1189,6 +1252,35 @@ function scroll(){
         item.style.transform = `translateX(-${counter * 1245}px)`;
     })
 }
+
+} else {
+    function left(){
+    if (counter === 0){
+        counter = scrollImages.length/4
+    }
+    else{
+        counter--
+    }
+    scroll()
+}
+function right(){
+    if (counter === scrollImages.length/4){
+        counter = 0
+    }
+    else{
+        counter++
+    }
+    scroll()
+}
+function scroll(){
+    scrollImages.forEach(function(item){
+        item.style.transform = `translateX(-${counter * 370}px)`;
+    })
+}
+
+}
+
+
 
     
     </script>
