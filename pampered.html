@@ -965,36 +965,17 @@ select #firstOption{
         let event6CheckBox = document.getElementById("event6CheckBox");
 
 
-
-        function myFunction() {
-            if (demoCheckbox.checked == true){
-                partnerDetails.style.display = "block";
-                firstName32.required = true;
-                emailAddress1.required = true;
-                phone1.required = true;
-            }
-            else if (((demoCheckbox.checked == true) && (day2.value === 'Yes')) || ((demoCheckbox.checked == true) && (day3Event1.value === 'Yes'))){
-                    tshirtSizeP.required = true;
-                    tshirtSize.required = true;
-                }
-            else {
-                partnerDetails.style.display = "none";
-                firstName32.required = false;
-                emailAddress1.required = false;
-                phone1.required = false;
-                tshirtSizeP.required = false;
-                tshirtSize.required = false;
-            }
-        }
         firstName32.required = false;
         emailAddress1.required = false;
         phone1.required = false;
-        tshirtSizeP.required = true;
-        tshirtSize.required = false;
+        tshirtSizeP.required = false;
+        tshirtSize.required = true;
 
         day3Event1.value='Yes';
         eventDiv3.style.display = "flex";
         pamperedDiv.style.display = "none";
+        tshirtSize.style.display = "block";
+        tshirtSizeP.style.display = "block";
 
 
         grownEvent.addEventListener('click', function(){
@@ -1017,6 +998,9 @@ select #firstOption{
                 tshirtSizeP.style.display = "block";
                 eventDiv2.style.display = "flex";
                 tshirtSize.required = true;
+                if(demoCheckbox.checked == true){
+                    tshirtSizeP.required = true;
+                }
         })
         event2CheckBox.addEventListener("click", function(){
             if (event2CheckBox.checked == true){
@@ -1048,6 +1032,9 @@ select #firstOption{
                 tshirtSize.style.display = "block";
                 tshirtSizeP.style.display = "block";
                 tshirtSize.required = true;
+                if(demoCheckbox.checked == true){
+                    tshirtSizeP.required = true;
+                }
         })
         event3CheckBox.addEventListener("click", function(){
             if (event3CheckBox.checked){
@@ -1181,7 +1168,26 @@ select #firstOption{
             eventDiv6.style.display = "none";
             farewellDiv.style.display = "flex";
         })
-        
+        function myFunction() {
+            if (demoCheckbox.checked == true){
+                partnerDetails.style.display = "block";
+                firstName32.required = true;
+                emailAddress1.required = true;
+                phone1.required = true;
+                if(day2.value === 'Yes' || day3Event1.value === 'Yes'){
+                    tshirtSizeP.required = true;
+                    tshirtSize.required = true;
+                }
+            }
+            else {
+                partnerDetails.style.display = "none";
+                firstName32.required = false;
+                emailAddress1.required = false;
+                phone1.required = false;
+                tshirtSizeP.required = false;
+                tshirtSize.required = false;
+            }
+        }
     
     </script>
     <script>
