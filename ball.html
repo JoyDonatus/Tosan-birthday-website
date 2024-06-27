@@ -411,14 +411,11 @@ select #firstOption{
 .swiper-navBtn::after{
     font-size: 40px;
 }
-swiper-button-next{
+.swiper-button-next{
     right: 0;
 }
-swiper-button-prev{
+.swiper-button-prev{
     left: 0;
-}
-#ballDiv{
-    display: none;
 }
 @media only screen and (max-width: 810px){
   .flip-card{
@@ -460,9 +457,6 @@ swiper-button-prev{
   line-height: 24px;
   text-align: left;
   color: #171717;
-}
-#ballDiv{
-    display: flex;
 }
 }
 </style>
@@ -565,7 +559,7 @@ swiper-button-prev{
                             value="" required="" placeholder="Departure (DD/MM/YYY)">
                         </div>
                     </div class="buttonLink">
-                        <input style="width: 477px; height: 64px; font-family: 'Kozuka Gothic Pro', sans-serif; border: none; border-radius: 20px; font-weight: 500; font-size: 18px; background-color: #ECD597; color: #171717; margin-top: 20px; cursor: pointer;" class="buttonLink" id="sub" type="submit" value="RSVP">
+                        <input style="width: 477px; height: 64px; font-family: 'Kozuka Gothic Pro', sans-serif; border: none; border-radius: 20px; font-weight: 700; font-size: 18px; background-color: #ECD597; color: #171717; margin-top: 20px; cursor: pointer;" class="buttonLink" id="sub" type="submit" value="RSVP">
                     
                     <!--<a class="buttonLink" id="sub" href="" ><button id="buttonLink" style="width: 239px; height: 57px; border: none; background-color: #222222; color: white; margin-top: 20px;" type="">Save and Continue</button></a>-->
                 </div>
@@ -839,40 +833,10 @@ swiper-button-prev{
                         </div>
                     </div>
                 </div>
-                <div class="flip-card swiper-slide" style="display: none;">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front" style="background-image: url('./pictures/1.png');">
-                            <h2>Dubai Red <br> Dune Safari</h2>
-                            <p>Thursday February 13th, 2025</p>
-                        </div>
-                        <div class="flip-card-back event1Back gold">
-                            <h2>Dubai Red<br>Dune Desert Safari</h2>
-                            <div class="eventDetails">
-                                <img src="./pictures/date.png" alt="">
-                                <p>Thursday, February 13th; 2025</p>
-                            </div>
-                            <div class="eventDetails">
-                                <img src="./pictures/clock.png" alt="">
-                                <p>Starts 2:00PM</p>
-                            </div>
-                            <div class="eventDetails" id="location5">
-                                <img src="./pictures/location.png" alt="" class="images">
-                                <p>Meet for pickup at - FIVE <br> Palm Jumeirah Hotel Dubai</p>
-                            </div>
-                            <div class="eventDetails">
-                                <img src="./pictures/Dress.png" alt="">
-                                <p>Comfy Casual</p>
-                            </div>
-                            <div>
-                                <button>Add to Event List</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="swiper-pagination"></div>
             <div class="swiper-button-prev swiper-navBtn"></div>
-            <div class="swiper-button-next swiper-navBtn"></div> 
+            <div class="swiper-button-next swiper-navBtn"></div>          
         </div>
     </section>
     
@@ -965,7 +929,6 @@ swiper-button-prev{
         let event4CheckBox = document.getElementById("event4CheckBox");
         let event5CheckBox = document.getElementById("event5CheckBox");
         let event6CheckBox = document.getElementById("event6CheckBox");
-
 
         firstName32.required = false;
         emailAddress1.required = false;

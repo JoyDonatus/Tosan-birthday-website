@@ -1,12 +1,9 @@
 var swiper = new Swiper(".cover", {
-    slidesPerView: 1,
+    slidesPerView: 3,
     spaceBetween: 25,
     loop: true,
     centerSlide: true,
     fade: true,
-    keyboard: {
-      enabled: true,
-    },
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -37,7 +34,9 @@ var swiper = new Swiper(".cover", {
        // slidesPerView: 3,
        // slidesPerGroup: 3,
       //},
-   // },
+   // },    keyboard: {
+   //   enabled: true,
+    //},
 
 
 //centeredSlides: false,
