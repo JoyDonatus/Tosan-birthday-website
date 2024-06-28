@@ -438,6 +438,7 @@ a{
 .swiper-button-prev{
     left: 0;
 }
+
 @media only screen and (max-width: 810px){
   .flip-card{
   perspective: 1000px;
@@ -563,12 +564,12 @@ a{
                     <div id="partnerDetails" style="display: none;">
                         <h2 class="goldtext">Partner's Details</h2>
                         <div class="inputDiv">
-                            <input class="inputInfo" required="" type="text" name="Partner Full Name" autocomplete="given-name" id="firstName32" value="" placeholder="Enter your partner's full name">
+                            <input class="inputInfo" required="" type="text" name="Partner's Full Name" autocomplete="given-name" id="firstName32" value="" placeholder="Enter your partner's full name">
                         </div>
                         <div class="inputDiv">
-                            <input class="inputInfo" type="email" required="" autocomplete="email" name="Partner Email Address" id="emailAddress1" value="" placeholder="Enter your partner's email address">
+                            <input class="inputInfo" type="email" required="" autocomplete="email" name="Partner's Email Address" id="emailAddress1" value="" placeholder="Enter your partner's email address">
                         </div>
-                        <select style="display: none;" name="Partner Tshirt Size" id="tshirtSizeP" required="">
+                        <select style="display: none;" name="Partner's Tshirt Size" id="tshirtSizeP" required="">
                             <option id="firstOption" value="" disabled selected hidden>select t-shirt size</option>
                             <option value="XXS">XXS</option>
                             <option value="XS">XS</option>
@@ -580,7 +581,7 @@ a{
                             <option value="XXXL">XXXL</option>
                         </select>
                         <div class="telPhoneInputDiv">
-                            <input class="inputInfo" required="" id="phone1" type="tel" autocomplete="tel" name="Partner Phone Number" value="" placeholder="Enter your partner's phone number">
+                            <input class="inputInfo" required="" id="phone1" type="tel" autocomplete="tel" name="Partner's Phone Number" value="" placeholder="Enter your partner's phone number">
                             <div class="alert alert-info" style="display: none;"></div>
                         </div>
                     </div>
@@ -891,6 +892,7 @@ a{
     <script>
         const phoneInput = document.querySelector("#phone");
         const phoneInput1 = document.querySelector("#phone1");
+        
         window.intlTelInput(phoneInput, {
         utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@20.2.0/build/js/utils.js",
         });
@@ -1208,6 +1210,11 @@ a{
         let form3 = document.querySelector("#form3");  
         form3.addEventListener('submit', (e) => {
             e.preventDefault();{
+        const phoneNumber = document.querySelector("#registrationDiv1 > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > input[type=hidden]:nth-child(3)");
+        const partnerPhoneNumber = document.querySelector("#partnerDetails > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > input[type=hidden]:nth-child(3)");
+        
+        phoneNumber.setAttribute('name', 'Phone Number');
+        partnerPhoneNumber.setAttribute('name', "Partner's Phone Number");
         var formData = new FormData(form3);
             var keyValuePairs = [];
             for (var pair of formData.entries()) {

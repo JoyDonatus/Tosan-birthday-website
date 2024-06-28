@@ -438,6 +438,7 @@ a{
 .swiper-button-prev{
     left: 0;
 }
+
 @media only screen and (max-width: 810px){
   .flip-card{
   perspective: 1000px;
@@ -507,7 +508,7 @@ a{
         <div class="containerDiv" id="containerDiv1">
             <form class="form3" id="form3">
                 <div class="checkBoxClass">
-                    <input type="checkbox" id="demoCheckbox" name="checkbox" value="1" onclick="myFunction()">
+                    <input type="checkbox" id="demoCheckbox" name="RSVP For Two" value="1" onclick="myFunction()">
                     <label for="demoCheckbox">RSVP For Two</label>
                 </div>
                 <div class="otherEvents" style="display: none;">
@@ -540,7 +541,7 @@ a{
                 </div>
                 <div id="registrationDiv1" class="registrationDiv" style="display: block;">
                     <div class="inputDiv">
-                        <input class="inputInfo" type="text" name="First Name" autocomplete="given-name" id="firstName3" required="" value="" placeholder="Enter your name">
+                        <input class="inputInfo" type="text" name="Full Name" autocomplete="given-name" id="firstName3" required="" value="" placeholder="Enter your full name">
                     </div>
                     <div class="inputDiv">
                         <input class="inputInfo" type="email" autocomplete="email" name="Email Address" id="emailAddress" required="" value="" placeholder="Enter your email address">
@@ -563,12 +564,12 @@ a{
                     <div id="partnerDetails" style="display: none;">
                         <h2 class="goldtext">Partner's Details</h2>
                         <div class="inputDiv">
-                            <input class="inputInfo" required="" type="text" name="Partner First Name" autocomplete="given-name" id="firstName32" value="" placeholder="Enter your partner's name">
+                            <input class="inputInfo" required="" type="text" name="Partner's Full Name" autocomplete="given-name" id="firstName32" value="" placeholder="Enter your partner's full name">
                         </div>
                         <div class="inputDiv">
-                            <input class="inputInfo" type="email" required="" autocomplete="email" name="Partner Email Address" id="emailAddress1" value="" placeholder="Enter your partner's email address">
+                            <input class="inputInfo" type="email" required="" autocomplete="email" name="Partner's Email Address" id="emailAddress1" value="" placeholder="Enter your partner's email address">
                         </div>
-                        <select style="display: none;" name="Partner Tshirt Size" id="tshirtSizeP" required="">
+                        <select style="display: none;" name="Partner's Tshirt Size" id="tshirtSizeP" required="">
                             <option id="firstOption" value="" disabled selected hidden>select t-shirt size</option>
                             <option value="XXS">XXS</option>
                             <option value="XS">XS</option>
@@ -580,17 +581,17 @@ a{
                             <option value="XXXL">XXXL</option>
                         </select>
                         <div class="telPhoneInputDiv">
-                            <input class="inputInfo" required="" id="phone1" type="tel" autocomplete="tel" name="Partner Phone Number" value="" placeholder="Enter your partner's phone number">
+                            <input class="inputInfo" required="" id="phone1" type="tel" autocomplete="tel" name="Partner's Phone Number" value="" placeholder="Enter your partner's phone number">
                             <div class="alert alert-info" style="display: none;"></div>
                         </div>
                     </div>
                     <hr style="display: none;">
                     <div class="inputDiv" id="dateDiv">
-                        <div id="start"><input class="inputInfo" type="text" name="trip-start"
+                        <div id="start"><input class="inputInfo" type="text" name="Arrival Date"
                             value="" required="" placeholder="Arrival (DD/MM/YYY)">
                         </div>
                         <div id="end" >
-                            <input class="inputInfo" type="text" name="trip-end"
+                            <input class="inputInfo" type="text" name="Departure Date"
                             value="" required="" placeholder="Departure (DD/MM/YYY)">
                         </div>
                     </div class="buttonLink">
@@ -604,22 +605,22 @@ a{
                         <input name="Welcome To Dubai" id="day1" type="text" value="">
                     </div>
                     <div class="event hidden">
-                        <input name="Dubai Desert Safari" id="day2" type="text" value="">
+                        <input name="Dubai Dune Desert Safari" id="day2" type="text" value="">
                     </div>
                     <div class="event hidden">
-                        <input name="Pampered" id="day3Event1" type="text" value="">
+                        <input name="Ladies Let's Get Pampered" id="day3Event1" type="text" value="">
                     </div>
                     <div class="event hidden">
-                        <input name="Birthday Ball" id="day3Event2" type="text" value="">
+                        <input name="Tosan's Birthday Ball" id="day3Event2" type="text" value="">
                     </div>
                     <div class="event hidden">
                         <input name="" id="day4Event1" type="text" value="">
                     </div>
                     <div class="event hidden">
-                        <input name="Nautical" id="day4Event2" type="text" value="">
+                        <input name="Nautical Extravaganza" id="day4Event2" type="text" value="">
                     </div>
                     <div class="event hidden">
-                        <input name="Farewell" id="day5" type="text" value="">
+                        <input name="Farewell Brunch" id="day5" type="text" value="">
                     </div>
                 </div>
             </form>
@@ -891,6 +892,7 @@ a{
     <script>
         const phoneInput = document.querySelector("#phone");
         const phoneInput1 = document.querySelector("#phone1");
+        
         window.intlTelInput(phoneInput, {
         utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@20.2.0/build/js/utils.js",
         });
@@ -983,9 +985,9 @@ a{
         tshirtSizeP.required = false;
         tshirtSize.required = false;
 
+       
         day1.value='Yes';
         eventDiv1.style.display = "flex";
-
 
         grownEvent.addEventListener('click', function(){
                 day1.value='Yes';
@@ -1205,6 +1207,11 @@ a{
         let form3 = document.querySelector("#form3");  
         form3.addEventListener('submit', (e) => {
             e.preventDefault();{
+        const phoneNumber = document.querySelector("#registrationDiv1 > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > input[type=hidden]:nth-child(3)");
+        const partnerPhoneNumber = document.querySelector("#partnerDetails > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > input[type=hidden]:nth-child(3)");
+        
+        phoneNumber.setAttribute('name', 'Phone Number');
+        partnerPhoneNumber.setAttribute('name', "Partner's Phone Number");
         var formData = new FormData(form3);
             var keyValuePairs = [];
             for (var pair of formData.entries()) {
