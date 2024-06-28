@@ -29,7 +29,13 @@
   body{
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'EB Garamond';
+  display: flex;
+  flex-direction: column;
+ }
+
+ .secondSection{
+    margin-bottom: 50px;
  }
 
 .otherEvents{
@@ -77,16 +83,12 @@ input[type="checkbox"]:checked + label:before {
 input[type="checkbox"]:checked + label:after {
   font-weight: bold;
 }
-.inputInfo, select{
-    border-color: #ECD597;
-    padding-left: 10px;
-}
+
 input:focus, select:focus { 
     outline: none !important;
     border-color: #ECD597;
     box-shadow: 0 0 10px #719ECE;
 }
-
 input::placeholder{
    text-align: center;
 }
@@ -116,7 +118,6 @@ select>options:-webkit-autofill {
     width: 286px;
     flex-direction: row;
     align-items: center;
-    font-family: 'Poppins', sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
@@ -134,18 +135,18 @@ select>options:-webkit-autofill {
     margin-right: 10px;
 }
 .eventsh2{
-  font-family: 'Poppins', sans-serif;
   text-align: left;
   width: 100%;
   padding-left: 70px;
+  font-size: 25px;
+  margin-bottom: 10px;
 }
 .flip-card-front > h2{
     height: 62px;
     width: 326px;
-    font-family: 'Poppins', sans-serif;
     font-size: 34px;
     font-weight: 700;
-    line-height: 42px;
+    line-height: 35px;
     text-align: center;
     margin: 0;
 }
@@ -153,7 +154,6 @@ select>options:-webkit-autofill {
 .flip-card-front > p{
     width: 261px;
     height: 53px;
-    font-family: 'Poppins', sans-serif;
     font-size: 18px;
     font-weight: 400;
     line-height: 53px;
@@ -162,12 +162,28 @@ select>options:-webkit-autofill {
 }
 .flip-card-back > h2{
     font-weight: 700;
-    font-family: 'Poppins', sans-serif;
     font-size: 24px;
-    line-height: 32px;
-    height: 58px;
+    line-height: 25px;
+    height: 40px;
     width: 286px;
     margin-top: 0;
+}
+
+.eventDetailsDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+    margin-bottom: 10px;
+}
+#redDune{
+    margin-bottom: 20px;
+}
+
+.buttonDiv{
+    width: 286px;
+    display: flex;
+    align-items: left;
 }
 button{
     background-color: #ECD597;
@@ -179,12 +195,12 @@ button{
     gap: 20px;
     opacity: 0px;
     border: 0px;
-    font-family: 'Kozuka Gothic Pro', sans-serif;
     font-size: 18px;
     font-weight: 700;
     line-height: 24px;
     text-align: center;
     cursor: pointer;
+    font-family: 'EB Garamond';
 }
 
 .chosenEvents{
@@ -200,7 +216,6 @@ button{
 }
 
 .eventName{
-  font-family: 'Poppins', sans-serif;
   font-size: 18px;
   font-weight: 700;
   line-height: 52px;
@@ -211,7 +226,6 @@ button{
     cursor: pointer;
 }
 .h5{
-    font-family: 'Poppins', sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
@@ -220,7 +234,6 @@ button{
     color: #393939;
 }
 .h3{
-    font-family: 'Poppins', sans-serif;
     font-size: 18px;
     font-weight: 500;
     line-height: 24px;
@@ -261,15 +274,17 @@ button{
     border-radius: 10px;
     width: 100%;
     margin-bottom: 10px;
-
+    font-family: 'EB Garamond';
+    padding-left: 10px;
 }
 .inputDiv, .telPhoneInputDiv{
     margin-bottom: 10px;
 }
 
-#tshirtSize > option:nth-child(1){
-    color: #393939;
+select > option{
+    font-family: 'EB Garamond';
 }
+
 .containerDiv{
     display: flex;
     width: 100%;
@@ -277,7 +292,6 @@ button{
     justify-content: space-between;
     gap: 40px;
     padding: 40px;
-    
 }
 .form3, .hiddenEvents{
     width: 40%;
@@ -290,7 +304,6 @@ button{
 }
 
 #partnerDetails > h2{
-    font-family: 'Poppins', sans-serif;
     margin-bottom: 5px;
 }
 #dateDiv{
@@ -375,6 +388,10 @@ a{
 .flip-card-inner {
   background-color: #ffffff00;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
   transition: transform 0.6s;
@@ -396,8 +413,12 @@ a{
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-select #firstOption{
-    opacity: 0.4;
+
+.inputInfo::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-family: 'EB Garamond';
+}
+.inputInfo::-moz-placeholder { /* Firefox 19+ */
+ font-family: 'EB Garamond';
 }
 
 .swiper-navBtn{
@@ -457,6 +478,27 @@ select #firstOption{
   line-height: 24px;
   text-align: left;
   color: #171717;
+}
+button{
+    width: 150px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 12px;
+    padding: 10px 20px 10px 20px;
+}
+.flip-card-front > h2{
+    font-size: 30px;
+    line-height: 32px;
+}
+
+.flip-card-front > p{
+    font-size: 18px;
+    line-height: 45px;
+
+}
+.firstSection{
+    margin-bottom: 20px;
 }
 }
 </style>
@@ -559,7 +601,7 @@ select #firstOption{
                             value="" required="" placeholder="Departure (DD/MM/YYY)">
                         </div>
                     </div class="buttonLink">
-                        <input style="width: 477px; height: 64px; font-family: 'Kozuka Gothic Pro', sans-serif; border: none; border-radius: 20px; font-weight: 700; font-size: 18px; background-color: #ECD597; color: #171717; margin-top: 20px; cursor: pointer;" class="buttonLink" id="sub" type="submit" value="RSVP">
+                        <input style="width: 477px; height: 64px; font-family: 'EB Garamond', sans-serif; border: none; border-radius: 20px; font-weight: 700; font-size: 18px; background-color: #ECD597; color: #171717; margin-top: 20px; cursor: pointer;" class="buttonLink" id="sub" type="submit" value="RSVP">
                     
                     <!--<a class="buttonLink" id="sub" href="" ><button id="buttonLink" style="width: 239px; height: 57px; border: none; background-color: #222222; color: white; margin-top: 20px;" type="">Save and Continue</button></a>-->
                 </div>
@@ -660,22 +702,24 @@ select #firstOption{
                             <p>Wednesday February 12th, 2025</p>
                         </div>
                         <div class="flip-card-back event1Back gold">
-                            <h2>Dubai Red<br>Dune Desert Safari</h2>
-                            <div class="eventDetails">
-                                <img src="./pictures/date.png" alt="">
-                                <p>Thursday, February 13th; 2025</p>
-                            </div>
-                            <div class="eventDetails">
-                                <img src="./pictures/clock.png" alt="">
-                                <p>Starts 6:00PM</p>
-                            </div>
-                            <div class="eventDetails" id="location">
-                                <img src="./pictures/location.png" alt="" class="images">
-                                <p>Maiden Shanghai - Five Palm Jumeirah Hotel Dubai</p>
-                            </div>
-                            <div class="eventDetails">
-                                <img src="./pictures/Dress.png" alt="">
-                                <p>Grown & Sexy</p>
+                            <h2>Welcome To Dubai</h2>
+                            <div class="eventDetailsDiv">
+                                <div class="eventDetails">
+                                    <img src="./pictures/date.png" alt="">
+                                    <p>Thursday, February 12th; 2025</p>
+                                </div>
+                                <div class="eventDetails">
+                                    <img src="./pictures/clock.png" alt="">
+                                    <p>Starts 6:00PM</p>
+                                </div>
+                                <div class="eventDetails" id="location">
+                                    <img src="./pictures/location.png" alt="" class="images">
+                                    <p>Maiden Shanghai - FIVE Palm Jumeirah Hotel Dubai</p>
+                                </div>
+                                <div class="eventDetails">
+                                    <img src="./pictures/Dress.png" alt="">
+                                    <p>Grown & Sexy</p>
+                                </div>
                             </div>
                             <div>
                                 <button id="grownEvent">Add to Event List</button>
@@ -686,27 +730,29 @@ select #firstOption{
                 <div class="flip-card swiper-slide" id="safariDiv">
                     <div class="flip-card-inner">
                         <div class="flip-card-front" style="background-image: url('https://lh3.googleusercontent.com/pw/AP1GczMg9kQmck3ByvRY9rwTBWpGQg1DIXOJ5hcXykltcZP7rtSp7EeSl84d26cAPWlb-OCf-QdkiZHvoka80RFcXuuSmMzEUybQsBP3LSwFVVT7gY047UKZ3KkKT4gAykA7MZGdc3XIg_t7o7YWgm7tz_X_=w335-h316-s-no-gm?authuser=0');">
-                            <h2>Dubai Red <br> Dune Safari</h2>
+                            <h2>Dubai Red Dune Safari</h2>
                             <p>Thursday February 13th, 2025</p>
                         </div>
                         <div class="flip-card-back event1Back gold">
-                            <h2>Dubai Red<br>Dune Desert Safari</h2>
-                            <div class="eventDetails">
-                                <img src="./pictures/date.png" alt="">
-                                <p>Thursday, February 13th; 2025</p>
-                            </div>
-                            <div class="eventDetails">
-                                <img src="./pictures/clock.png" alt="">
-                                <p>Starts 2:00PM</p>
-                            </div>
-                            <div class="eventDetails" id="location">
-                                <img src="./pictures/location.png" alt="" class="images">
-                                <p>Meet for pickup at - FIVE <br> Palm Jumeirah Hotel Dubai</p>
-                            </div>
-                            <div class="eventDetails">
-                                <img src="./pictures/Dress.png" alt="">
-                                <p>Comfy Casual</p>
-                            </div>
+                            <h2 id="redDune">Dubai Red Dune Desert Safari</h2>
+                            <div class="eventDetailsDiv">
+                                <div class="eventDetails">
+                                    <img src="./pictures/date.png" alt="">
+                                    <p>Thursday, February 13th; 2025</p>
+                                </div>
+                                <div class="eventDetails">
+                                    <img src="./pictures/clock.png" alt="">
+                                    <p>Starts 2:00PM</p>
+                                </div>
+                                <div class="eventDetails" id="location">
+                                    <img src="./pictures/location.png" alt="" class="images">
+                                    <p>Meet for pickup at - FIVE <br> Palm Jumeirah Hotel Dubai</p>
+                                </div>
+                                <div class="eventDetails">
+                                    <img src="./pictures/Dress.png" alt="">
+                                    <p>Comfy Casual</p>
+                                </div>
+                            </div>  
                             <div>
                                 <button id="safariEvent">Add to Event List</button>
                             </div>
@@ -720,22 +766,24 @@ select #firstOption{
                             <p>Friday February 14th, 2025</p>
                         </div>
                         <div class="flip-card-back event1Back gold">
-                            <h2>Ladies Let’s <br> Get Pampered</h2>
-                            <div class="eventDetails">
-                                <img src="./pictures/date.png" alt="">
-                                <p>Friday, February 14th; 2025</p>
-                            </div>
-                            <div class="eventDetails">
-                                <img src="./pictures/clock.png" alt="">
-                                <p>Starts 10:00AM</p>
-                            </div>
-                            <div class="eventDetails" id="location1">
-                                <img src="./pictures/location.png" alt="" class="images">
-                                <p>Sofitel Dubai The Palm Resort & Spa</p>
-                            </div>
-                            <div class="eventDetails">
-                                <img src="./pictures/Dress.png" alt="">
-                                <p>Jammies</p>
+                            <h2>Ladies Let’s Get Pampered</h2>
+                            <div class="eventDetailsDiv">
+                                <div class="eventDetails">
+                                    <img src="./pictures/date.png" alt="">
+                                    <p>Friday, February 14th; 2025</p>
+                                </div>
+                                <div class="eventDetails">
+                                    <img src="./pictures/clock.png" alt="">
+                                    <p>Starts 10:00AM</p>
+                                </div>
+                                <div class="eventDetails" id="location1">
+                                    <img src="./pictures/location.png" alt="" class="images">
+                                    <p>Sofitel Dubai The Palm Resort & Spa</p>
+                                </div>
+                                <div class="eventDetails">
+                                    <img src="./pictures/Dress.png" alt="">
+                                    <p>Jammies</p>
+                                </div>
                             </div>
                             <div>
                                 <button id="pamperedEvent">Add to Event List</button>
@@ -751,21 +799,23 @@ select #firstOption{
                         </div>
                         <div class="flip-card-back event1Back gold">
                             <h2>Birthday Bash</h2>
-                            <div class="eventDetails">
-                                <img src="./pictures/date.png" alt="">
-                                <p>Friday, February 14th; 2025</p>
-                            </div>
-                            <div class="eventDetails">
-                                <img src="./pictures/clock.png" alt="">
-                                <p>Starts 6:00PM</p>
-                            </div>
-                            <div class="eventDetails" id="location2">
-                                <img src="./pictures/location.png" alt="" class="images">
-                                <p>TBD</p>
-                            </div>
-                            <div class="eventDetails">
-                                <img src="./pictures/Dress.png" alt="">
-                                <p>Dubai Bling</p>
+                            <div class="eventDetailsDiv">
+                                <div class="eventDetails">
+                                    <img src="./pictures/date.png" alt="">
+                                    <p>Friday, February 14th; 2025</p>
+                                </div>
+                                <div class="eventDetails">
+                                    <img src="./pictures/clock.png" alt="">
+                                    <p>Starts 6:00PM</p>
+                                </div>
+                                <div class="eventDetails" id="location2">
+                                    <img src="./pictures/location.png" alt="" class="images">
+                                    <p>FIVE Palm Jumeirah Hotel Dubai</p>
+                                </div>
+                                <div class="eventDetails">
+                                    <img src="./pictures/Dress.png" alt="">
+                                    <p>Dubai Bling</p>
+                                </div>
                             </div>
                             <div>
                                 <button id="tosanEvent">Add to Event List</button>
@@ -781,21 +831,23 @@ select #firstOption{
                         </div>
                         <div class="flip-card-back event1Back gold">
                             <h2>Nautical Extravagana</h2>
-                            <div class="eventDetails">
-                                <img src="./pictures/date.png" alt="">
-                                <p>Saturday, February 15th; 2025</p>
-                            </div>
-                            <div class="eventDetails">
-                                <img src="./pictures/clock.png" alt="">
-                                <p>Starts 4:00PM</p>
-                            </div>
-                            <div class="eventDetails" id="location3">
-                                <img src="./pictures/location.png" alt="" class="images">
-                                <p>Meet for pickup at - FIVE <br> Palm Jumeirah Hotel Dubai</p>
-                            </div>
-                            <div class="eventDetails">
-                                <img src="./pictures/Dress.png" alt="">
-                                <p>Ahoy Shailor</p>
+                            <div class="eventDetailsDiv">
+                                <div class="eventDetails">
+                                    <img src="./pictures/date.png" alt="">
+                                    <p>Saturday, February 15th; 2025</p>
+                                </div>
+                                <div class="eventDetails">
+                                    <img src="./pictures/clock.png" alt="">
+                                    <p>Starts 4:00PM</p>
+                                </div>
+                                <div class="eventDetails" id="location3">
+                                    <img src="./pictures/location.png" alt="" class="images">
+                                    <p>Meet for pickup at - FIVE <br> Palm Jumeirah Hotel Dubai</p>
+                                </div>
+                                <div class="eventDetails">
+                                    <img src="./pictures/Dress.png" alt="">
+                                    <p>Ahoy Shailor</p>
+                                </div>
                             </div>
                             <div>
                                 <button id="nauticalEvent">Add to Event List</button>
@@ -804,29 +856,31 @@ select #firstOption{
                     </div>
                 </div>
                 <div class="flip-card swiper-slide" id="farewellDiv">
-                    <div class="flip-card-inner">
+                    <div class="flip-card-inner" >
                         <div class="flip-card-front" style="background-image: url('https://lh3.googleusercontent.com/pw/AP1GczOcLWw2rFsa98wBTTwIqOE5ZyrnjiJnhCCiU1uE5XsBEs9_4dRCL0fAlN232ganggs4YwhFjSBTnZXT_RxCBM0eauLSNzJhyFuWy0idp_2pzdNzLnlqzU2Lp_COfWn2yXw-h_uiBPki6-qKYjnBO3nH=w335-h316-s-no-gm?authuser=0');">
                             <h2>Farewell Brunch</h2>
                             <p>Sunday February 16th, 2025</p>
                         </div>
                         <div class="flip-card-back event1Back gold">
                             <h2>Farewell Brunch</h2>
-                            <div class="eventDetails">
-                                <img src="./pictures/date.png" alt="">
-                                <p>Sunday, February 16th; 2025</p>
-                            </div>
-                            <div class="eventDetails">
-                                <img src="./pictures/clock.png" alt="">
-                                <p>12:00 Noon</p>
-                            </div>
-                            <div class="eventDetails" id="location4">
-                                <img src="./pictures/location.png" alt="" class="images">
-                                <p>FIVE Palm Jumeirah Hotel Dubai</p>
-                            </div>
-                            <div class="eventDetails">
-                                <img src="./pictures/Dress.png" alt="">
-                                <p>Casuals</p>
-                            </div>
+                            <div class="eventDetailsDiv">
+                                <div class="eventDetails">
+                                    <img src="./pictures/date.png" alt="">
+                                    <p>Sunday, February 16th; 2025</p>
+                                </div>
+                                <div class="eventDetails">
+                                    <img src="./pictures/clock.png" alt="">
+                                    <p>12:00 Noon</p>
+                                </div>
+                                <div class="eventDetails" id="location4">
+                                    <img src="./pictures/location.png" alt="" class="images">
+                                    <p>FIVE Palm Jumeirah Hotel Dubai</p>
+                                </div>
+                                <div class="eventDetails">
+                                    <img src="./pictures/Dress.png" alt="">
+                                    <p>Casuals</p>
+                                </div>
+                            </div>   
                             <div>
                                 <button id="farewellEvent">Add to Event List</button>
                             </div>
@@ -938,6 +992,7 @@ select #firstOption{
 
         day1.value='Yes';
         eventDiv1.style.display = "flex";
+
 
         grownEvent.addEventListener('click', function(){
                 day1.value='Yes';
@@ -1191,7 +1246,7 @@ select #firstOption{
         }})
     </script>
 </body>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="js/swiper-bundle.min.js"></script>
-    <script src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/swiper-bundle.min.js"></script>
+<script src="js/script.js"></script>
 </html>

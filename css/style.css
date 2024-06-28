@@ -9,8 +9,17 @@ padding: 0;
 box-sizing: border-box;
 }
 body{
+width: 100%;
+min-height: 100vh;
 margin: 0;
 padding: 0;
+font-family: 'EB Garamond';
+display: flex;
+flex-direction: column;
+}
+
+.secondSection{
+margin-bottom: 50px;
 }
 
 .otherEvents{
@@ -67,7 +76,6 @@ outline: none !important;
 border-color: #ECD597;
 box-shadow: 0 0 10px #719ECE;
 }
-
 input::placeholder{
 text-align: center;
 }
@@ -97,7 +105,6 @@ display: flex;
 width: 286px;
 flex-direction: row;
 align-items: center;
-font-family: 'Poppins', sans-serif;
 font-size: 14px;
 font-weight: 400;
 line-height: 20px;
@@ -115,18 +122,18 @@ height: 24px;
 margin-right: 10px;
 }
 .eventsh2{
-font-family: 'Kozuka Gothic Pro', sans-serif;
 text-align: left;
 width: 100%;
 padding-left: 70px;
+font-size: 25px;
+margin-bottom: 10px;
 }
 .flip-card-front > h2{
 height: 62px;
 width: 326px;
-font-family: 'Kozuka Gothic Pro', sans-serif;
 font-size: 34px;
 font-weight: 700;
-line-height: 42px;
+line-height: 35px;
 text-align: center;
 margin: 0;
 }
@@ -134,7 +141,6 @@ margin: 0;
 .flip-card-front > p{
 width: 261px;
 height: 53px;
-font-family: 'Poppins', sans-serif;
 font-size: 18px;
 font-weight: 400;
 line-height: 53px;
@@ -143,12 +149,25 @@ text-align: center;
 }
 .flip-card-back > h2{
 font-weight: 700;
-font-family: 'Kozuka Gothic Pro', sans-serif;
 font-size: 24px;
-line-height: 32px;
-height: 58px;
+line-height: 20px;
+height: 40px;
 width: 286px;
 margin-top: 0;
+}
+
+.eventDetailsDiv{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: left;
+margin-bottom: 10px;
+}
+
+.buttonDiv{
+width: 286px;
+display: flex;
+align-items: left;
 }
 button{
 background-color: #ECD597;
@@ -160,12 +179,12 @@ padding: 20px 40px 20px 40px;
 gap: 20px;
 opacity: 0px;
 border: 0px;
-font-family: 'Kozuka Gothic Pro', sans-serif;
 font-size: 18px;
-font-weight: 500;
+font-weight: 700;
 line-height: 24px;
 text-align: center;
 cursor: pointer;
+font-family: 'EB Garamond';
 }
 
 .chosenEvents{
@@ -181,7 +200,6 @@ text-align: left;
 }
 
 .eventName{
-font-family: 'Kozuka Gothic Pro', sans-serif;
 font-size: 18px;
 font-weight: 700;
 line-height: 52px;
@@ -192,7 +210,6 @@ color: #171717;
 cursor: pointer;
 }
 .h5{
-font-family: 'Kozuka Gothic Pro', sans-serif;
 font-size: 14px;
 font-weight: 400;
 line-height: 24px;
@@ -201,7 +218,6 @@ text-align: left;
 color: #393939;
 }
 .h3{
-font-family: 'Kozuka Gothic Pro', sans-serif;
 font-size: 18px;
 font-weight: 500;
 line-height: 24px;
@@ -248,9 +264,10 @@ margin-bottom: 10px;
 margin-bottom: 10px;
 }
 
-#tshirtSize > option:nth-child(1){
-color: #393939;
+select > option{
+font-family: 'EB Garamond';
 }
+
 .containerDiv{
 display: flex;
 width: 100%;
@@ -258,7 +275,6 @@ align-items: top;
 justify-content: space-between;
 gap: 40px;
 padding: 40px;
-
 }
 .form3, .hiddenEvents{
 width: 40%;
@@ -271,7 +287,6 @@ margin-top: 10px;
 }
 
 #partnerDetails > h2{
-font-family: 'Kozuka Gothic Pro', sans-serif;
 margin-bottom: 5px;
 }
 #dateDiv{
@@ -308,10 +323,9 @@ padding: 40px, 0;
 .cover .scrollImages{
 position: relative;
 display: flex;
+max-width: 900px;
 transition: 0.5s;
 border-radius: 10px;
-margin-left: 30px;  
-width: max-content;
 }
 
 .cover .arrow button{
@@ -344,7 +358,8 @@ height: 316px;
 border-radius: 25px;
 margin-right: 10px;
 background-color: #ffffff00;
-padding-right: 40px;
+padding-right: 20px;
+padding-left: 20px;
 }
 
 .flip-card-front{
@@ -356,6 +371,10 @@ background-size: cover;
 .flip-card-inner {
 background-color: #ffffff00;
 position: relative;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
 width: 100%;
 height: 100%;
 transition: transform 0.6s;
@@ -377,8 +396,30 @@ position: absolute;
 -webkit-backface-visibility: hidden;
 backface-visibility: hidden;
 }
-select #firstOption{
-opacity: 0.4;
+
+.inputInfo::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+font-family: 'EB Garamond';
+}
+.inputInfo::-moz-placeholder { /* Firefox 19+ */
+font-family: 'EB Garamond';
+}
+
+.swiper-navBtn{
+color: #ECD597;
+transition: color 0.3s ease;
+}
+.swiper-navBtn:hover{
+color: #BE9E47;
+}
+.swiper-navBtn::before,
+.swiper-navBtn::after{
+font-size: 40px;
+}
+.swiper-button-next{
+right: 0;
+}
+.swiper-button-prev{
+left: 0;
 }
 @media only screen and (max-width: 810px){
 .flip-card{
@@ -396,15 +437,6 @@ display: flex;
 transition: 0.5s;
 border-radius: 10px; 
 width: 100%;
-margin-left: 20px;
-}
-
-.cover .arrow button{
-font-size: 20px;
-top: 50%;
-cursor: pointer;
-width: 40px;
-height: 70px
 }
 
 .containerDiv{
@@ -424,11 +456,28 @@ flex-direction: column;
 width: 90%;
 }
 .eventName{
-font-family: 'Kozuka Gothic Pro', sans-serif;
 font-size: 18px;
 font-weight: 700;
 line-height: 24px;
 text-align: left;
 color: #171717;
+}
+button{
+width: 150px;
+height: 50px;
+font-size: 16px;
+font-weight: 700;
+line-height: 12px;
+padding: 10px 20px 10px 20px;
+}
+.flip-card-front > h2{
+font-size: 30px;
+line-height: 32px;
+}
+
+.flip-card-front > p{
+font-size: 18px;
+line-height: 45px;
+
 }
 }
