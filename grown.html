@@ -438,6 +438,10 @@ a{
 .swiper-button-prev{
     left: 0;
 }
+.buttonLink{
+    position: relative;
+    z-index: 99;
+}
 
 @media only screen and (max-width: 810px){
   .flip-card{
@@ -448,10 +452,7 @@ a{
   background-color: #ffffff00;
   padding-right: 10px;
 }
-.submitButton{
-    position: relative;
-    z-index: 1;
-}
+
 .cover .scrollImages{
     position: relative;
     display: flex;
@@ -514,7 +515,7 @@ a{
                     <input type="checkbox" id="demoCheckbox" name="RSVP For Two" value="1" onclick="myFunction()">
                     <label for="demoCheckbox">RSVP For Two</label>
                 </div>
-                <div class="otherEvents" style="display: none;">
+                <!--<div class="otherEvents" style="display: none;">
                     <p>other Events</p>
                     <div class="checkBoxClass">
                         <input type="checkbox" id="event1CheckBox" name="checkbox1" value="9">
@@ -541,8 +542,8 @@ a{
                         <label for="event6CheckBox">Day 5 Event: Farewell Brunch</label>
                     </div>
 
-                </div>
-                <div id="registrationDiv1" class="registrationDiv" style="display: block;">
+                </div>-->
+                <div id="registrationDiv1" class="registrationDiv" style="display: flex; flex-direction: column; position: relative; z-index: 5;">
                     <div class="inputDiv">
                         <input class="inputInfo" type="text" name="Full Name" autocomplete="given-name" id="firstName3" required="" value="" placeholder="Enter your full name">
                     </div>
@@ -588,7 +589,6 @@ a{
                             <div class="alert alert-info" style="display: none;"></div>
                         </div>
                     </div>
-                    <hr style="display: none;">
                     <div class="inputDiv" id="dateDiv">
                         <div id="start"><input class="inputInfo" type="text" name="Arrival Date"
                             value="" required="" placeholder="Arrival (DD/MM/YYY)">
@@ -597,9 +597,6 @@ a{
                             <input class="inputInfo" type="text" name="Departure Date"
                             value="" required="" placeholder="Departure (DD/MM/YYY)">
                         </div>
-                    </div>
-                    <div class="submitButton">
-                        <input style="width: 477px; height: 64px; font-family: 'EB Garamond', sans-serif; border: none; border-radius: 20px; font-weight: 700; font-size: 18px; background-color: #ECD597; color: #171717; margin-top: 20px; cursor: pointer;" class="buttonLink" id="sub" type="submit" value="RSVP"> 
                     </div>
                     <div>
                         <div class="event hidden">
@@ -626,6 +623,7 @@ a{
                     </div>                   
                     <!--<a class="buttonLink" id="sub" href="" ><button id="buttonLink" style="width: 239px; height: 57px; border: none; background-color: #222222; color: white; margin-top: 20px;" type="">Save and Continue</button></a>-->
                 </div>
+                <input style="width: 477px; height: 64px; font-family: 'EB Garamond', sans-serif; border: none; border-radius: 20px; font-weight: 700; font-size: 18px; background-color: #ECD597; color: #171717; margin-top: 20px; cursor: pointer;" class="buttonLink" id="sub" type="submit" value="RSVP">
             </form>
             <div class="hiddenEvents">
                 <div>
