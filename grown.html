@@ -1213,8 +1213,12 @@ a{
         const phoneNumber = document.querySelector("#registrationDiv1 > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > input[type=hidden]:nth-child(3)");
         const partnerPhoneNumber = document.querySelector("#partnerDetails > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > input[type=hidden]:nth-child(3)");
         
-        phoneNumber.setAttribute('name', 'Phone Number');
-        partnerPhoneNumber.setAttribute('name', "Partner's Phone Number");
+        if (phoneNumber.value !== ""){
+            phoneNumber.setAttribute('name', 'Phone Number');
+        }
+        if (partnerPhoneNumber.value !== ""){
+            partnerPhoneNumber.setAttribute('name', "Partner's Phone Number");
+        }
         var formData = new FormData(form3);
             var keyValuePairs = [];
             for (var pair of formData.entries()) {
