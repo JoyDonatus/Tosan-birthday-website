@@ -546,7 +546,7 @@ button{
                 </div>
                 <div id="registrationDiv1" class="registrationDiv" style="display: block;">
                     <div class="inputDiv">
-                        <input class="inputInfo" type="text" name="First Name" autocomplete="given-name" id="firstName3" required="" value="" placeholder="Enter your name">
+                        <input class="inputInfo" type="text" name="Full Name" autocomplete="given-name" id="firstName3" required="" value="" placeholder="Enter your full name">
                     </div>
                     <div class="inputDiv">
                         <input class="inputInfo" type="email" autocomplete="email" name="Email Address" id="emailAddress" required="" value="" placeholder="Enter your email address">
@@ -569,12 +569,12 @@ button{
                     <div id="partnerDetails" style="display: none;">
                         <h2 class="goldtext">Partner's Details</h2>
                         <div class="inputDiv">
-                            <input class="inputInfo" required="" type="text" name="Partner First Name" autocomplete="given-name" id="firstName32" value="" placeholder="Enter your partner's name">
+                            <input class="inputInfo" required="" type="text" name="Partner's First Name" autocomplete="given-name" id="firstName32" value="" placeholder="Enter your partner's name">
                         </div>
                         <div class="inputDiv">
-                            <input class="inputInfo" type="email" required="" autocomplete="email" name="Partner Email Address" id="emailAddress1" value="" placeholder="Enter your partner's email address">
+                            <input class="inputInfo" type="email" required="" autocomplete="email" name="Partner's Email Address" id="emailAddress1" value="" placeholder="Enter your partner's email address">
                         </div>
-                        <select style="display: none;" name="Partner Tshirt Size" id="tshirtSizeP" required="">
+                        <select style="display: none;" name="Partner's Tshirt Size" id="tshirtSizeP" required="">
                             <option id="firstOption" value="" disabled selected hidden>select t-shirt size</option>
                             <option value="XXS">XXS</option>
                             <option value="XS">XS</option>
@@ -592,11 +592,11 @@ button{
                     </div>
                     <hr style="display: none;">
                     <div class="inputDiv" id="dateDiv">
-                        <div id="start"><input class="inputInfo" type="text" name="trip-start"
+                        <div id="start"><input class="inputInfo" type="text" name="Arrival Date"
                             value="" required="" placeholder="Arrival (DD/MM/YYY)">
                         </div>
                         <div id="end" >
-                            <input class="inputInfo" type="text" name="trip-end"
+                            <input class="inputInfo" type="text" name="Departure Date"
                             value="" required="" placeholder="Departure (DD/MM/YYY)">
                         </div>
                     </div class="buttonLink">
@@ -1219,7 +1219,7 @@ button{
 
         var formDataString = keyValuePairs.join("&");
             
-            fetch('https://script.google.com/macros/s/AKfycbxdyW1o8EJ51BLxOnbGK5yGb-cd45sdZHdRt6vrWWNcAjKvye8NSwU4DbFJ3H3apa1WDA/exec',{
+            fetch('https://script.google.com/macros/s/AKfycbyJ6UoUQk1g7lZVQSWEKo410Jd1zJFY1EvshLC2hROGfp3YZVJNsdhGPFiHcS6-yVWTGQ/exec',{
                 redirect: 'follow',
                 method: "POST",
                 body: formDataString,

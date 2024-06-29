@@ -438,9 +438,9 @@ a{
 .swiper-button-prev{
     left: 0;
 }
-#sub{
+.buttonLink{
     position: relative;
-    z-index: 5; 
+    z-index: 99;
 }
 
 @media only screen and (max-width: 810px){
@@ -1211,14 +1211,20 @@ a{
     
     </script>
     <script>
-        var phoneNumber = document.querySelector("#registrationDiv1 > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > input[type=hidden]:nth-child(3)");
-        var partnerPhoneNumber = document.querySelector("#partnerDetails > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > input[type=hidden]:nth-child(3)");
+        var realPhoneNumber = document.getElementById("phone");
+        var partPhoneNumber = document.getElementById("phone1");
+        //document.getElementsByName("phone_full")[0].value;
+        //document.getElementsByName("phone_full")[1].value
+        //var phoneNumber = document.querySelector("#registrationDiv1 > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > input[type=hidden]:nth-child(3)");
+        //var partnerPhoneNumber = document.querySelector("#partnerDetails > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > input[type=hidden]:nth-child(3)");
         let form3 = document.querySelector("#form3");  
             form3.addEventListener('submit', (e) => {
             e.preventDefault();
-            {
-                phoneNumber.setAttribute("name", "Phone Number");
-                partnerPhoneNumber.setAttribute("name", "Partner's Phone Number");
+            {   
+                realPhoneNumber.value = document.getElementsByName("phone_full")[0].value;
+                partPhoneNumber.value = document.getElementsByName("phone_full")[1].value;
+                //phoneNumber.setAttribute("name", "Phone Number");
+                //partnerPhoneNumber.setAttribute("name", "Partner's Phone Number");
             var formData = new FormData(form3);
             var keyValuePairs = [];
             for (var pair of formData.entries()) {
@@ -1227,7 +1233,7 @@ a{
     
         var formDataString = keyValuePairs.join("&");
             
-            fetch('https://script.google.com/macros/s/AKfycbxdyW1o8EJ51BLxOnbGK5yGb-cd45sdZHdRt6vrWWNcAjKvye8NSwU4DbFJ3H3apa1WDA/exec',{
+            fetch('https://script.google.com/macros/s/AKfycbyJ6UoUQk1g7lZVQSWEKo410Jd1zJFY1EvshLC2hROGfp3YZVJNsdhGPFiHcS6-yVWTGQ/exec',{
                 redirect: 'follow',
                 method: "POST",
                 body: formDataString,
