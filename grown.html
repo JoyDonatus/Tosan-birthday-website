@@ -448,7 +448,10 @@ a{
   background-color: #ffffff00;
   padding-right: 10px;
 }
-
+.submitButton{
+    position: relative;
+    z-index: 1;
+}
 .cover .scrollImages{
     position: relative;
     display: flex;
@@ -594,7 +597,10 @@ a{
                             <input class="inputInfo" type="text" name="Departure Date"
                             value="" required="" placeholder="Departure (DD/MM/YYY)">
                         </div>
-                    </div> 
+                    </div>
+                    <div class="submitButton">
+                        <input style="width: 477px; height: 64px; font-family: 'EB Garamond', sans-serif; border: none; border-radius: 20px; font-weight: 700; font-size: 18px; background-color: #ECD597; color: #171717; margin-top: 20px; cursor: pointer;" class="buttonLink" id="sub" type="submit" value="RSVP"> 
+                    </div>
                     <div>
                         <div class="event hidden">
                             <input name="Welcome To Dubai" id="day1" type="text" value="">
@@ -620,7 +626,6 @@ a{
                     </div>                   
                     <!--<a class="buttonLink" id="sub" href="" ><button id="buttonLink" style="width: 239px; height: 57px; border: none; background-color: #222222; color: white; margin-top: 20px;" type="">Save and Continue</button></a>-->
                 </div>
-                <input style="width: 477px; height: 64px; font-family: 'EB Garamond', sans-serif; border: none; border-radius: 20px; font-weight: 700; font-size: 18px; background-color: #ECD597; color: #171717; margin-top: 20px; cursor: pointer;" class="buttonLink" id="sub" type="submit" value="RSVP">
             </form>
             <div class="hiddenEvents">
                 <div>
