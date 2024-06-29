@@ -996,15 +996,15 @@ a{
                 day1.value='Yes';
                 eventDiv1.style.display = "flex";
         })
-        event1CheckBox.addEventListener("click", function(){
-            if (event1CheckBox.checked == true){
-                day1.value='Yes';
-                eventDiv1.style.display = "flex";
-            } else {
-                day1.value=' ';
-                eventDiv1.style.display = "none";
-            }
-        })
+        //event1CheckBox.addEventListener("click", function(){
+           // if (event1CheckBox.checked == true){
+        //         day1.value='Yes';
+        //         eventDiv1.style.display = "flex";
+        //     } else {
+        //         day1.value=' ';
+        //         eventDiv1.style.display = "none";
+        //     }
+        // })
 
         safariEvent.addEventListener('click', function(){
                 day2.value='Yes';
@@ -1016,28 +1016,28 @@ a{
                     tshirtSizeP.required = true;
                 }
         })
-        event2CheckBox.addEventListener("click", function(){
-            if (event2CheckBox.checked == true){
-                day2.value='Yes';
-                tshirtSize.style.display = "block";
-                tshirtSizeP.style.display = "block";
-                eventDiv2.style.display = "flex";
-            } else {
-                day2.value=' ';
-                eventDiv2.style.display = "none";
+        // event2CheckBox.addEventListener("click", function(){
+        //     if (event2CheckBox.checked == true){
+        //         day2.value='Yes';
+        //         tshirtSize.style.display = "block";
+        //         tshirtSizeP.style.display = "block";
+        //         eventDiv2.style.display = "flex";
+        //     } else {
+        //         day2.value=' ';
+        //         eventDiv2.style.display = "none";
 
-                if(day3Event1.value === 'Yes'){
-                    tshirtSize.style.display = "block";
-                    tshirtSizeP.style.display = "block";
-                }
-                else{
-                    tshirtSize.style.display = "none";
-                    tshirtSize.selectedIndex = 0;
-                    tshirtSizeP.style.display = "none";
-                    tshirtSizeP.selectedIndex = 0;
-                } 
-            }
-        })
+        //         if(day3Event1.value === 'Yes'){
+        //             tshirtSize.style.display = "block";
+        //             tshirtSizeP.style.display = "block";
+        //         }
+        //         else{
+        //             tshirtSize.style.display = "none";
+        //             tshirtSize.selectedIndex = 0;
+        //             tshirtSizeP.style.display = "none";
+        //             tshirtSizeP.selectedIndex = 0;
+        //         } 
+        //     }
+        // })
 
         pamperedEvent.addEventListener('click', function(){
                 day3Event1.value='Yes';
@@ -1050,74 +1050,74 @@ a{
                     tshirtSizeP.required = true;
                 }
         })
-        event3CheckBox.addEventListener("click", function(){
-            if (event3CheckBox.checked){
-                day3Event1.value='Yes';
-                eventDiv3.style.display = "flex";
-                tshirtSize.required = true;
-                tshirtSize.style.display = "block";
-                tshirtSizeP.style.display = "block";
-            } else {
-                day3Event1.value=' ';
-                eventDiv3.style.display = "none";
-                pamperedDiv.style.display = "flex";
-                if(day2.value === 'Yes'){
-                    tshirtSize.style.display = "block";
-                    tshirtSizeP.style.display = "block";
-                }
-                else{
-                    tshirtSize.style.display = "none";
-                    tshirtSizeP.style.display = "none";
-                    tshirtSizeP.selectedIndex = 0;
-                    tshirtSize.selectedIndex = 0;
-                }
-            }
-        })
+        // event3CheckBox.addEventListener("click", function(){
+        //     if (event3CheckBox.checked){
+        //         day3Event1.value='Yes';
+        //         eventDiv3.style.display = "flex";
+        //         tshirtSize.required = true;
+        //         tshirtSize.style.display = "block";
+        //         tshirtSizeP.style.display = "block";
+        //     } else {
+        //         day3Event1.value=' ';
+        //         eventDiv3.style.display = "none";
+        //         pamperedDiv.style.display = "flex";
+        //         if(day2.value === 'Yes'){
+        //             tshirtSize.style.display = "block";
+        //             tshirtSizeP.style.display = "block";
+        //         }
+        //         else{
+        //             tshirtSize.style.display = "none";
+        //             tshirtSizeP.style.display = "none";
+        //             tshirtSizeP.selectedIndex = 0;
+        //             tshirtSize.selectedIndex = 0;
+        //         }
+        //     }
+        // })
 
         tosanEvent.addEventListener('click', function(){
                 day3Event2.value='Yes';
                 eventDiv4.style.display = "flex";
         })
-        event4CheckBox.addEventListener("click", function(){
-            if (event4CheckBox.checked == true){
-                day3Event2.value='Yes';
-                eventDiv4.style.display = "flex";
-            } else {
-                day3Event2.value=' ';
-                eventDiv4.style.display = "none";
-                ballDiv.style.display = "flex";
-                }
-        })
+        // event4CheckBox.addEventListener("click", function(){
+        //     if (event4CheckBox.checked == true){
+        //         day3Event2.value='Yes';
+        //         eventDiv4.style.display = "flex";
+        //     } else {
+        //         day3Event2.value=' ';
+        //         eventDiv4.style.display = "none";
+        //         ballDiv.style.display = "flex";
+        //         }
+        // })
 
         nauticalEvent.addEventListener('click', function(){
                 day4Event2.value='Yes';
                 eventDiv5.style.display = "flex";
         })
-        event5CheckBox.addEventListener("click", function(){
-            if (event5CheckBox.checked == true){
-                day4Event2.value='Yes';
-                eventDiv5.style.display = "flex";
-            } else {
-                day4Event2.value=' ';
-                eventDiv5.style.display = "none";
-                nauticalDiv.style.display = "flex";
-            }
-        })
+        // event5CheckBox.addEventListener("click", function(){
+        //     if (event5CheckBox.checked == true){
+        //         day4Event2.value='Yes';
+        //         eventDiv5.style.display = "flex";
+        //     } else {
+        //         day4Event2.value=' ';
+        //         eventDiv5.style.display = "none";
+        //         nauticalDiv.style.display = "flex";
+        //     }
+        // })
 
         farewellEvent.addEventListener('click', function(){
                 day5.value='Yes';
                 eventDiv6.style.display = "flex";
         })
-        event6CheckBox.addEventListener("click", function(){
-            if (event6CheckBox.checked == true){
-                day5.value='Yes';
-                eventDiv6.style.display = "flex";
-            } else {
-                day5.value=' ';
-                eventDiv6.style.display = "none";
-                farewellDiv.style.display = "flex";
-            }
-        })
+        // event6CheckBox.addEventListener("click", function(){
+        //     if (event6CheckBox.checked == true){
+        //         day5.value='Yes';
+        //         eventDiv6.style.display = "flex";
+        //     } else {
+        //         day5.value=' ';
+        //         eventDiv6.style.display = "none";
+        //         farewellDiv.style.display = "flex";
+        //     }
+        // })
 
 
         eventDiv1Cancel.addEventListener('click', function(){
