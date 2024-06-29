@@ -1205,51 +1205,51 @@ a{
         }
     
     </script>
-    <script>
-        
-        let form3 = document.querySelector("#form3");  
-        form3.addEventListener('submit', (e) => {
-            e.preventDefault();{
-        const phoneNumber = document.getElementById("registrationDiv1 > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > input[type=hidden]:nth-child(3)");
-        const partnerPhoneNumber = document.getElementById("#partnerDetails > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > input[type=hidden]:nth-child(3)");
-        
-            phoneNumber.setAttribute("name", "Phone Number");
-            partnerPhoneNumber.setAttribute("name", "Partner's Phone Number");
-
-        var formData = new FormData(form3);
-            var keyValuePairs = [];
-            for (var pair of formData.entries()) {
-              keyValuePairs.push(pair[0] + "=" + pair[1]);
-            }
-
-        var formDataString = keyValuePairs.join("&");
-            
-            fetch('https://script.google.com/macros/s/AKfycbxdyW1o8EJ51BLxOnbGK5yGb-cd45sdZHdRt6vrWWNcAjKvye8NSwU4DbFJ3H3apa1WDA/exec',{
-                redirect: 'follow',
-                method: "POST",
-                body: formDataString,
-                headers: {
-                    'Content-Type': 'text/plain;charset=utf-8',
-                },
-            })
-            //.then(res => res.text())
-            .then(function (response) {
-            // Check if the request was successful
-            if (response) {
-              return response; // Assuming your script returns JSON response
-            } else {
-              throw new Error("Failed to submit the form.");
-            }
-          })
-            .then(function (data) {
-                window.open("https://effective-food-275152.framer.app/Confirmation", "_top");
-                form3.reset();
-            }).catch(function (error) {
-                console.error(error);
-            });
-        }})
-    </script>
 </body>
+<script>
+        
+    let form3 = document.querySelector("#form3");  
+    form3.addEventListener('submit', (e) => {
+        e.preventDefault();{
+    const phoneNumber = document.getElementById("registrationDiv1 > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > input[type=hidden]:nth-child(3)");
+    const partnerPhoneNumber = document.getElementById("#partnerDetails > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > input[type=hidden]:nth-child(3)");
+    
+        phoneNumber.setAttribute("name", "Phone Number");
+        partnerPhoneNumber.setAttribute("name", "Partner's Phone Number");
+
+    var formData = new FormData(form3);
+        var keyValuePairs = [];
+        for (var pair of formData.entries()) {
+          keyValuePairs.push(pair[0] + "=" + pair[1]);
+        }
+
+    var formDataString = keyValuePairs.join("&");
+        
+        fetch('https://script.google.com/macros/s/AKfycbxdyW1o8EJ51BLxOnbGK5yGb-cd45sdZHdRt6vrWWNcAjKvye8NSwU4DbFJ3H3apa1WDA/exec',{
+            redirect: 'follow',
+            method: "POST",
+            body: formDataString,
+            headers: {
+                'Content-Type': 'text/plain;charset=utf-8',
+            },
+        })
+        //.then(res => res.text())
+        .then(function (response) {
+        // Check if the request was successful
+        if (response) {
+          return response; // Assuming your script returns JSON response
+        } else {
+          throw new Error("Failed to submit the form.");
+        }
+      })
+        .then(function (data) {
+            window.open("https://effective-food-275152.framer.app/Confirmation", "_top");
+            form3.reset();
+        }).catch(function (error) {
+            console.error(error);
+        });
+    }})
+</script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="js/swiper-bundle.min.js"></script>
 <script src="js/script.js"></script>
