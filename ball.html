@@ -322,12 +322,18 @@ select > option{
     gap: 10px;
 }
 input[type="date"]{
-            width: 100%;
+            width: 100% !important;
         }
 ::-webkit-calendar-picker-indicator{
-        width: 10%;
+        width: 50%;
         padding: 10px;
+        top: 50;
+        left: 50;
         margin-right: 20px;
+        cursor: pointer;
+        position: absolute !important;
+        z-index: 1 !important;
+        opacity: 0 !important;
     }
 hr{
     color: #ECD597;
@@ -527,10 +533,9 @@ body > section.main-scroll-div > div > div.swiper-pagination.swiper-pagination-c
     width: 310px !important;
 }
 ::-webkit-calendar-picker-indicator{
-            width: 100%;
-            position: absolute;
-            z-index: 1;
-            opacity: 0;
+            position: absolute !important;
+            z-index: 1 !important;
+            opacity: 0 !important;
         }
 }
 </style>
