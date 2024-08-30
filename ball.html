@@ -322,8 +322,16 @@ select > option{
     gap: 10px;
 }
 input[type="date"]{
-            width: 100% !important;
+    background-color: #ffffff00;
+            width: 100%;
+            display:flex;
+            display:-webkit-flex;
+            flex: 1 0 0;
+            -webkit-flex: 1 0 0;
         }
+#start, #end{
+    display: flex;
+}
 ::-webkit-calendar-picker-indicator{
         width: 50%;
         padding: 10px;
