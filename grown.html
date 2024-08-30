@@ -325,9 +325,6 @@ input[type="date"]{
             flex: 1 0 0;
             -webkit-flex: 1 0 0;
         }
-input[type="text"]{
-    cursor: pointer;
-}
 #start, #end{
     display: flex;
 }
@@ -649,7 +646,7 @@ input[type="date"]{
                         </div>
                         <div id="end" >
                             <input class="inputInfo" type="text" name="Departure Date"
-                            value="" required="" placeholder="Departure Date" onclick="this.type='date'" onblur="(this.type='text')">
+                            value="" required="" placeholder="Departure Date" style="cursor: pointer;" onclick="this.type='date'" onblur="(this.type='text')">
                         </div>
                     </div>
                     <div>
