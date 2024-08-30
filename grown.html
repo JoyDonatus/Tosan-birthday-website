@@ -642,11 +642,11 @@ input[type="date"]{
                     </div>
                     <div class="inputDiv" id="dateDiv">
                         <div id="start"><input class="inputInfo" type="date" name="Arrival Date"
-                            value="" required="" placeholder="Arrival Date">
+                            value="" required="" placeholder="Arrival Date" onfocusout="(this.type='text')"d>
                         </div>
                         <div id="end" >
                             <input class="inputInfo" type="text" name="Departure Date"
-                            value="" required="" placeholder="Departure Date" onfocus="(this.type='date')" onfocusout="(this.type='text')">
+                            value="" required="" placeholder="Departure Date" onfocusin="(this.type='date')" onfocusout="(this.type='text')">
                         </div>
                     </div>
                     <div>
