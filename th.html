@@ -3,18 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <script>
+        $(function() {
+        $( "#datepicker" ).datepicker();
+    });
+    </script>
     <title>Document</title>
     <style>
         
-        /*::-webkit-calendar-picker-indicator{
-            color: purple;
-        }*/
+        ::-webkit-calendar-picker-indicator{
+            width: 50%;
+        }
+        input[type="date"]{
+            width: 100%;
+        }
     </style>
 </head>
 
 <body>
     <div id="start"><input class="inputInfo" type="text" name="Arrival Date"
-        value="" required="" placeholder="Arrival Date" onfocusin="(this.type='date')" onfocusout="(this.type='text')">
+        value="" required="" placeholder="Arrival Date" onfocus="(this.type='date')">
     </div>
     <div id="end" >
         <input class="inputInfo" type="text" name="Departure Date"
