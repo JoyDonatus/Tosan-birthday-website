@@ -618,12 +618,13 @@ button{
                     <hr style="display: none;">
                     <div class="inputDiv" id="dateDiv">
                         <div id="start"><input class="inputInfo" type="text" name="Arrival Date"
-                            value="" required="" placeholder="Arrival (DD/MM/YYY)">
+                            value="" required="" placeholder="Arrival Date" onmouseenter="this.type='date'" onmouseleave="(this.type='text')">
                         </div>
                         <div id="end" >
                             <input class="inputInfo" type="text" name="Departure Date"
-                            value="" required="" placeholder="Departure (DD/MM/YYY)">
+                            value="" required="" placeholder="Departure Date" onmouseenter="this.type='date'" onmouseleave="(this.type='text')">
                         </div>
+                    </div>
                     </div class="buttonLink">
                         <input style="width: 477px; height: 64px; font-family: 'EB Garamond', sans-serif; border: none; border-radius: 20px; font-weight: 700; font-size: 18px; background-color: #ECD597; color: #171717; margin-top: 20px; cursor: pointer;" class="buttonLink" id="sub" type="submit" value="RSVP">
                     

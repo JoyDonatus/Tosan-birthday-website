@@ -635,12 +635,16 @@ body > section.main-scroll-div > div > div.swiper-pagination.swiper-pagination-c
                         </div>
                     </div>
                     <div class="inputDiv" id="dateDiv">
-                        <div id="start"><input class="inputInfo" type="text" name="Arrival Date"
-                            value="" required="" placeholder="Arrival Date" onmouseenter="this.type='date'" onmouseleave="(this.type='text')">
+                        <div id="start"><input class="inputInfo" type="text" name="Arrival Date" id="ad1"
+                            value="" required="" placeholder="Arrival Date">
+                            <input class="inputInfo" type="date" id="ad2" style="display: none;"
+                            value="" required="">
                         </div>
                         <div id="end" >
-                            <input class="inputInfo" type="text" name="Departure Date"
-                            value="" required="" placeholder="Departure Date" onmouseenter="this.type='date'" onmouseleave="(this.type='text')">
+                            <input class="inputInfo" type="text" name="Departure Date" id="dd1"
+                            value="" required="" placeholder="Departure Date" >
+                            <input class="inputInfo" type="date" id="dd2" style="display: none;"
+                            value="" required="" placeholder="Departure Date">
                         </div>
                     </div>
                     <div>
@@ -934,6 +938,43 @@ body > section.main-scroll-div > div > div.swiper-pagination.swiper-pagination-c
         </div>
     </section>
     
+    <script>
+        let arrivalDateInput1 = document.getElementById('ad1');
+        let arrivalDateInput2 = document.getElementById('ad2');
+        let departureDateInput1 = document.getElementById('dd1');
+        let departureDateInput2 = document.getElementById('dd2');
+
+        arrivalDateInput1.addEventListener('mouseenter', function(){
+                arrivalDateInput1.style.display = 'none';
+                arrivalDateInput2.style.display = 'block';
+                
+            })
+        arrivalDateInput2.addEventListener('mouseleave', function(){
+                arrivalDateInput1.style.display = 'block';
+                arrivalDateInput2.style.display = 'none';
+                if (arrivalDateInput2.value !== " "){
+                    arrivalDateInput1.value = arrivalDateInput2.value;
+                }
+            })
+
+        arrivalDateInput1.addEventListener('mouseenter', function(){
+                arrivalDateInput1.style.display = 'none';
+                arrivalDateInput2.style.display = 'block';
+                
+            })
+        departureDateInput1.addEventListener('mouseenter', function(){
+                departureDateInput1.style.display = 'none';
+                departureDateInput2.style.display = 'block';
+                
+            })
+        departureDateInput2.addEventListener('mouseleave', function(){
+                departureDateInput1.style.display = 'block';
+                departureDateInput2.style.display = 'none';
+                if (departureDateInput2.value !== " "){
+                    departureDateInput1.value = departureDateInput2.value;
+                }
+            })
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@20.2.0/build/js/intlTelInput.min.js"></script>
     <script>
         const phoneInput = document.querySelector("#phone");
@@ -1296,7 +1337,7 @@ body > section.main-scroll-div > div > div.swiper-pagination.swiper-pagination-c
             }
           })
             .then(function (data) {
-                window.open("https://effective-food-275152.framer.app/Confirmation", "_top");
+                window.open("https://tosans40thdubaibling.com/Confirmation", "_top");
                 form3.reset();
             }).catch(function (error) {
                 console.error(error);
